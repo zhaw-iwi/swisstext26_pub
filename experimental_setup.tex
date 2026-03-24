@@ -1,7 +1,7 @@
 \section{Experimental Setup}
 \label{sec:experimental-setup}
 
-We evaluate the dataset under a $3 \times 2$ design that varies transcript structure and processing mode while keeping the underlying scenario content fixed. The evaluation begins from text transcripts rather than raw audio, isolating the task-state monitoring problem from upstream speech-recognition errors and allowing a controlled comparison of transcript representations.
+We evaluate the dataset under a $3 \times 2$ design that varies transcript structure and processing mode while keeping the underlying scenario content fixed.
 
 \subsection{Conditions}
 
@@ -13,7 +13,7 @@ Incremental processing is the primary application condition. The \texttt{full\_t
 
 \subsection{Execution and Reproducibility}
 
-All reported values are batch-level means across 12 repeated runs. The notebook runs the evaluation in live mode with \texttt{gpt-5.2} at temperature 0.0. Repeated runs are reported because live API inference can still show small residual variation despite deterministic settings. The evaluation pipeline persists each request and response artifact using deterministic identifiers over run, scenario, structure condition, processing mode, and prefix index, supporting resume-safe execution and auditability. The tables report 95\% confidence intervals from the batch summaries exported by the notebook and evaluation code.
+All reported values are batch-level means across 12 repeated runs. The notebook runs the evaluation in live mode with \texttt{gpt-5.2} at temperature 0.0. Repeated runs are reported because live API inference can still show small residual variation despite deterministic settings. The evaluation prompt instructed the model to behave conservatively: when the transcript did not provide sufficient evidence for assignment or completion, the corresponding fields were to remain \texttt{false}/\texttt{null}. This reflects the operational preference to avoid overstating task progress under incomplete evidence. The evaluation pipeline persists each request and response artifact using deterministic identifiers over run, scenario, structure condition, processing mode, and prefix index, supporting resume-safe execution and auditability. The tables report 95\% confidence intervals from the batch summaries exported by the notebook and evaluation code.
 
 \subsection{Metrics}
 

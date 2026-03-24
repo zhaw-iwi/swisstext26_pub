@@ -7,6 +7,8 @@ The main empirical result is straightforward: in this controlled setup, simplify
 
 Incremental inference is the more deployment-relevant setting because the command-support system must update task state while communication unfolds. Table~\ref{tab:incremental-results} shows that performance remains strong and tightly clustered across transcript structures. The main weakness is not assignment or completion detection itself, but unit assignment, which is consistently lower than the other state-tracking metrics. Operationally, recognizing that a task is underway appears easier than grounding exactly which unit currently owns it.
 
+In the offline \texttt{full\_transcript} reference, assignment and unit-assignment accuracy are 1.000 in all three transcript conditions, while completion and final-state accuracy are 0.933 in all three conditions.
+
 \begin{table}[t]
 \centering
 \small
