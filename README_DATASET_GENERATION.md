@@ -1,237 +1,165 @@
-# Dataset Generation and Validation Pipeline
+# Dataset Generation and Validation
 
-## Overview
+This repository includes the source-grounded synthetic dataset used in the paper and the materials used to construct and validate it.
 
-This repository contains a controlled synthetic dataset for firefighter radio communication, constructed as part of a research project on LLM-based monitoring of predefined operational tasks.
+The role of these materials is provenance and auditability. The paper's empirical contribution is the transcript-structure evaluation on the dataset, not the dataset-generation workflow by itself.
 
-Beyond the dataset itself, this repository contributes a **reproducible, source-grounded dataset construction methodology**. The goal is not only to provide data, but to demonstrate how synthetic datasets can be systematically grounded in real-world sources while remaining controllable and auditable.
+## Dataset Role
 
-The approach combines:
+The dataset exists to support a controlled comparison of transcript-structure conditions while keeping underlying operational content fixed.
 
-- explicit grounding in external domain sources  
-- structured prompt-based dataset generation  
-- independent validation passes  
-- iterative refinement under predefined acceptance criteria  
+That is why the dataset is:
 
-This process is designed to balance **realism, control, and reproducibility**, and is aligned with the broader goal of reproducible NLP research.
+- synthetic
+- source-grounded
+- closed-world
+- small and intentionally controlled
 
----
+It is not meant as a realism corpus, a raw-audio dataset, or a dataset for open-ended task discovery.
 
-## Methodological Framing
+## Paper-Aligned Construction Summary
 
-The dataset was constructed using a controlled synthetic generation process grounded in three external sources:
+The paper describes the dataset as follows:
 
-1. Official radio communication protocols (BABS Sprechregeln)  
-2. A real-world firefighter communication transcript  
-3. Operational doctrine (FKS Einsatzführung)  
+- grounded in three source types:
+  - Swiss radio-procedure material
+  - a real firefighter communication transcript
+  - canonical procedural regulations
+- generated as fixed-schema scenario JSON files
+- validated in two rubric-guided streams:
+  - structural validation
+  - content validation
+- generated and validated with `gpt-5.4`
+- accepted after a 12-round generation-validation-revision loop
 
-From these sources, structured **source note documents** were created and used to guide both generation and validation.
+The repository preserves the full validation trail under `datasetgeneration/target/validation_1/` through `datasetgeneration/target/validation_13/`. These folders document the iterative construction history and audit trail. The paper reports the accepted dataset in terms of a 12-round generation-validation-revision loop; the extra retained validation folder is part of the repository history, not a separate paper claim.
 
-Two independent validation passes were applied:
+## Dataset Contents
 
-- **Structural validation**: protocol adherence, communication structure, and realism of radio interaction  
-- **Content validation**: operational plausibility, task validity, and consistency of task-state representations  
+The dataset used in the paper is located at:
 
-The dataset was iteratively refined until it satisfied predefined acceptance criteria. The goal was not perfect realism, but a **stable and defensible design point** suitable for evaluating closed-world task monitoring.
+- `data/scenarios/synthetic_firefighter_radio_controlled_v1/`
 
----
+Paper-level dataset facts:
 
-## Bootstrap Procedure
+- 5 German-language scenarios
+- 102 ordered messages
+- 15 predefined tasks
+- 15 task-state traces
+- 12 completed tasks
+- 3 assigned but incomplete tasks at scenario end
 
-The entire pipeline is reproducible from a single meta-prompt.
+Each scenario stores:
 
-### Step 1 — Meta-Prompt Initialization
+- ordered radio messages
+- predefined monitored tasks
+- gold task states
+- transition annotations for assignment and completion timing
 
-A bootstrap prompt is provided at:
-`.bootstrap/metaprompt.txt`
+## Repository Layout
 
-This prompt is designed to be inserted into a new ChatGPT session. It guides the creation of:
+Dataset-construction materials live under:
 
-- three grounded source note files  
-- one dataset generation specification  
-- two validation specifications  
+- `datasetgeneration/boostrap/`
+- `datasetgeneration/target/`
 
-These documents form the `.agents/datasetgeneration/` folder and act as the **formal specification layer** for the dataset.
+Important note:
 
----
+- the directory name is `boostrap/` in the repository
 
-### Step 2 — Codex Prompt Generation
+Key materials:
 
-Using the bootstrap process, four Codex prompts were derived and stored in:
-`.bootstrap/`
+- `datasetgeneration/boostrap/metaprompt.txt`
+- `datasetgeneration/boostrap/codex_1_generate-the-dataset.txt`
+- `datasetgeneration/boostrap/codex_2_structural-validation.txt`
+- `datasetgeneration/boostrap/codex_3_content-validation.txt`
+- `datasetgeneration/boostrap/codex_4_revision-pass-after-validation.txt`
+- `datasetgeneration/target/dataset_generation.md`
+- `datasetgeneration/target/dataset_validation_structure.md`
+- `datasetgeneration/target/dataset_validation_content.md`
+- `datasetgeneration/target/source_notes_sprechregeln.md`
+- `datasetgeneration/target/source_notes_real_transcript.md`
+- `datasetgeneration/target/source_notes_einsatzfuehrung.md`
+- `datasetgeneration/target/validation_*/`
 
-- `codex_1_generate-the-dataset.txt`
-- `codex_2_structural-validation.txt`
-- `codex_3_content-validation.txt`
-- `codex_4_revision-pass-after-validation.txt`
+The repository keeps these materials in `datasetgeneration/target/`.
 
-These prompts implement the operational pipeline for dataset construction and refinement.
+## How To Generate The Dataset From These Materials
 
----
+If you want to reconstruct the dataset-generation workflow from the materials in `datasetgeneration/`, use the folders in this order.
 
-## Iterative Dataset Construction Process
+1. Read the bootstrap prompt in `datasetgeneration/boostrap/metaprompt.txt`.
+2. Use that prompt to initialize a fresh chat session that recreates the dataset-specification layer.
+3. Treat the specification documents in `datasetgeneration/target/` as the canonical target documents for that process:
+   - `dataset_generation.md`
+   - `dataset_validation_structure.md`
+   - `dataset_validation_content.md`
+   - `source_notes_sprechregeln.md`
+   - `source_notes_real_transcript.md`
+   - `source_notes_einsatzfuehrung.md`
+4. Run the operational prompts from `datasetgeneration/boostrap/` in sequence:
+   - `codex_1_generate-the-dataset.txt`
+   - `codex_2_structural-validation.txt`
+   - `codex_3_content-validation.txt`
+   - `codex_4_revision-pass-after-validation.txt`
+5. After each pass, write the resulting artifacts into `datasetgeneration/target/`:
+   - update the top-level construction documents when the specification changes
+   - write round-specific reports into the next `validation_<n>/` folder
+6. Repeat the structural validation, content validation, and revision cycle until the dataset satisfies the intended stopping rule.
+7. Compare the resulting scenario files against `data/scenarios/synthetic_firefighter_radio_controlled_v1/`, which contains the dataset used by the paper.
 
-The dataset was created through iterative application of the four Codex prompts:
+In practical terms, `datasetgeneration/boostrap/` contains the executable prompt materials and `datasetgeneration/target/` contains the specification, source notes, and validation history that those prompts operate against.
 
-### Step 1 — Dataset Generation
+## Validation Logic
 
-- Run: `codex_1_generate-the-dataset.txt`
-- Output: initial synthetic dataset (5 scenarios) + construction log
+The two validation streams serve different purposes.
 
-### Step 2 — Structural Validation
+Structural validation checks:
 
-- Run: `codex_2_structural-validation.txt`
-- Evaluates:
-  - radio protocol adherence  
-  - message structure  
-  - turn-taking plausibility  
-  - communication realism  
+- radio style and protocol coherence
+- acknowledgement structure
+- turn-taking plausibility
+- transcript realism under the intended communication style
 
-### Step 3 — Content Validation
+Content validation checks:
 
-- Run: `codex_3_content-validation.txt`
-- Evaluates:
-  - operational plausibility  
-  - task realism  
-  - role-task alignment  
-  - sequencing and dependencies  
-  - gold-state traceability  
+- operational plausibility
+- role-task alignment
+- sequencing and dependencies
+- traceability of gold states to explicit message evidence
 
-### Step 4 — Revision Pass
+## Gold-State Semantics
 
-- Run: `codex_4_revision-pass-after-validation.txt`
-- Applies targeted fixes based on validation reports:
-  - local corrections where possible  
-  - scenario regeneration only when necessary  
+The paper relies on annotation-grounded transition timing.
 
-### Step 5 — Re-Validation
+- Task-command linkage is not defined by lexical overlap with the task name.
+- Assignment timing is anchored to the first operative assignment to the responsible unit.
+- Later refinements to the same unit do not reset the assignment point.
+- Completion timing is tied to explicit completion evidence or explicit scenario metadata.
 
-- Re-run:
-  - structural validation  
-  - content validation  
-- Continue iteration if needed
+This is the reason the scenario JSON files include transition annotations rather than forcing the evaluation pipeline to infer them heuristically from wording.
 
----
+## How To Use These Materials
 
-## Iteration Summary
+Use the dataset-generation materials to understand:
 
-The process was executed for **13 full runs** of:
+- how the dataset was grounded
+- what was validated during construction
+- how the scenarios evolved across revisions
+- how to reconstruct the prompt-driven generation workflow
 
-- generation → validation → revision → re-validation  
+Do not treat them as the main entry point for running the paper experiment. For that, start with:
 
-The iteration was stopped once both validation passes produced:
+- `README.md`
+- `main.tex`
+- `code/evaluation_notebook.ipynb`
 
-- no critical issues  
-- only minor or limited moderate issues  
-- stable dataset-level behavior  
-- full schema and gold-label consistency  
+## Reproducibility Caveat
 
-Importantly, the stopping criterion was **fitness for purpose**, not perfect validation scores.
+The repository preserves the prompt-driven workflow and its audit trail, but the paper's main reproducibility claim is narrower:
 
----
+- the dataset files are versioned
+- the evaluation code is deterministic outside live API calls
+- repeated runs and persisted artifacts make the reported evaluation traceable
 
-## Stopping Rule
-
-The iteration process was guided by the following relaxed stopping criteria:
-
-- no critical issues in either validation report  
-- at most a small number of moderate issues per scenario  
-- no repeated dataset-level issue patterns across consecutive rounds  
-- sufficient diversity across the 5 scenarios  
-- full consistency of schema and gold task states  
-
-Once these conditions were satisfied, the process was terminated.
-
----
-
-## Design Rationale
-
-This pipeline reflects several design decisions:
-
-### 1. Separation of Concerns
-
-- generation, validation, and revision are handled independently  
-- prevents circular bias between generation and evaluation  
-
-### 2. Source Grounding
-
-- all rules are derived from curated source notes  
-- ensures traceability to real-world material  
-
-### 3. Controlled Variability
-
-- dataset includes realistic imperfections (e.g. partial updates, delayed confirmations)  
-- avoids overly clean, artificial scenarios  
-
-### 4. Reproducibility
-
-- all steps are prompt-driven and documented  
-- no hidden manual adjustments  
-
-### 5. Bounded Realism
-
-- the goal is not perfect simulation of reality  
-- but a controlled, representative testbed for task-state monitoring  
-
----
-
-## Outcome
-
-The final dataset represents a **stable and validated synthetic benchmark** for:
-
-- monitoring predefined tasks in multi-party communication  
-- evaluating robustness to transcript structure variation  
-- studying incremental inference behavior  
-
-At the same time, the pipeline itself constitutes a reusable approach for:
-
-- grounded synthetic dataset construction  
-- LLM-assisted validation workflows  
-- reproducible experimental setup design  
-
----
-
-## Repository Structure (Relevant Parts)
-
-`.bootstrap/`
-
-- `metaprompt.txt`
-- `codex_1_generate-the-dataset.txt`
-- `codex_2_structural-validation.txt`
-- `codex_3_content-validation.txt`
-- `codex_4_revision-pass-after-validation.txt`
-
-`.agents/datasetgeneration/`
-
-- `dataset_generation.md`
-- `dataset_validation_structure.md`
-- `dataset_validation_content.md`
-- `source_notes_sprechregeln.md`
-- `source_notes_real_transcript.md`
-- `source_notes_einsatzfuehrung.md`
-- `validation_X/` for X in {1, 2, ..., 13}, each containing the validation reports and revision logs
-
-
----
-
-## Reproducibility
-
-To reproduce the dataset:
-
-1. Start a new ChatGPT session  
-2. paste `.bootstrap/metaprompt.txt`  
-3. generate the specification documents  
-4. run the Codex prompts in sequence  
-5. iterate until stopping criteria are met  
-
----
-
-## Final Note
-
-This dataset should be understood as:
-
-- **synthetic but grounded**  
-- **controlled but realistic**  
-- **validated but not overfitted to validation criteria**  
-
-The pipeline intentionally stops at a point where remaining imperfections reflect **real-world ambiguity**, not construction errors.
+Synthetic dataset construction with live LLMs should be understood as controlled and documented, not as bit-for-bit replayable in perpetuity.

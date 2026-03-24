@@ -1,146 +1,148 @@
-# SwissText 2026: Final Closed-World Task Monitoring Experiment
+# SwissText 2026: Task-State Monitoring for Firefighter Incident Command
 
-This repository runs the final paper experiment for known-task monitoring from firefighter communication.
+This repository contains the paper, dataset, and evaluation pipeline for a bounded coordination-support capability: monitoring the state of predefined firefighter tasks from multi-party radio transcripts for a command-support dashboard.
 
-Research question:
+The central paper question is:
 
-> What transcript structure is required for reliable LLM-based monitoring of known operational tasks?
+> How much transcript structure is required for reliable closed-world task-state monitoring?
 
-## Final Experimental Design
+## Paper Framing
 
-Two axes are evaluated as a Cartesian product (3 x 2):
+The paper studies a narrow monitoring problem.
 
-- Transcript structure:
-  - `structured_dialogue`
-  - `no_speaker`
-  - `continuous_transcript`
-- Processing mode:
-  - `full_transcript`
-  - `incremental`
+- Tasks are predefined before transcript analysis.
+- The model updates task state from transcript evidence.
+- The target system is a dashboard for shared coordination under human oversight.
+- The work does not study open-ended task discovery or autonomous command decisions.
 
-For every scenario and run, all 6 cells are executed.
+## Repository Contents
+
+- `main.tex` and the section `.tex` files: paper source
+- `data/scenarios/synthetic_firefighter_radio_controlled_v1/`: scenario dataset
+- `code/src/swisstext_eval/`: evaluation pipeline
+- `code/tests/`: deterministic local tests
+- `code/evaluation_notebook.ipynb`: main experiment notebook
+- `code/completion_outcome_reanalysis.ipynb`: ROUGE-L analysis for `completion_outcome`
+- `datasetgeneration/`: source-grounded dataset construction and validation materials; see `README_DATASET_GENERATION.md` for the LLM-as-judge workflow, repository layout, and dataset-generation instructions
+
+## Dataset Summary
+
+The dataset used in the paper contains:
+
+- 5 German-language firefighter scenarios
+- 102 ordered radio messages
+- 15 predefined tasks
+- 15 assigned tasks
+- 12 completed tasks
+- 3 tasks that remain assigned but incomplete at scenario end
+
+The dataset is synthetic but source-grounded. It is grounded in radio-procedure material, a real firefighter transcript, and procedural regulations. Scenario generation and validation were carried out with `gpt-5.4` under constrained, rubric-guided prompts. The paper reports a 12-round generation-validation-revision loop; the repository keeps the iterative validation trail under `datasetgeneration/target/validation_1/` through `datasetgeneration/target/validation_13/` as audit material.
+
+## Experiment Design
+
+The evaluation uses a `3 x 2` design.
+
+Transcript structures:
+
+- `structured_dialogue`
+- `no_speaker`
+- `continuous_transcript`
+
+Processing modes:
+
+- `incremental`
+- `full_transcript`
+
+Incremental evaluation is the primary application-facing condition. Full-transcript evaluation is a secondary offline reference.
 
 ## Task Formulation
 
-Given:
-
-- predefined scenario task list
-- communication transcript
-
-Predict per task:
+Given a predefined task list and transcript evidence, the model predicts for each task:
 
 - `assigned`
 - `assigned_unit`
 - `completed`
-- optional `completion_outcome`
+- `completion_outcome`
 
-## Configuration Surface
+The prompt is conservative: if the evidence is insufficient, fields remain `false` or `null`.
 
-The notebook and runner use one explicit config object (`NotebookConfig`):
+## Main Evaluation Facts
 
-- `experiment.run_count` (default `12`)
-- `experiment.selected_scenarios`
-- `experiment.selected_structure_conditions`
-- `experiment.selected_processing_modes`
-- `experiment.incremental_prefix_policy` (default `every_message`)
-- `experiment.api_batch_size`
-- `experiment.resume_behavior` (default `skip_completed`)
-- `experiment.output_run_tag`
-- `provider.model_name`, `temperature`, `max_tokens`, `timeout_seconds`, `retry_count`
-- `experiment.prompt_version_tag`
-- `evaluation.export_tables`, `evaluation.export_figures`
+- evaluation model: `gpt-5.2`
+- temperature: `0.0`
+- repeated runs: `12`
+- primary metrics:
+  - assignment accuracy
+  - unit assignment accuracy
+  - completion accuracy
+  - state accuracy
+  - assignment / completion detection latency
+  - assignment / completion miss rate
+  - terminal convergence gaps
 
-## Resume-Safe Request Persistence
+For `completion_outcome`, the exact-match metric remained uninformative in the evaluation. The paper therefore also reports a similarity-based re-analysis on gold-completed tasks only, using ROUGE-L. That re-analysis is documented in:
 
-Each LLM request is persisted with deterministic work identity:
+- `code/completion_outcome_reanalysis.ipynb`
 
-`(run_id, scenario_id, structure_condition, processing_mode, prefix_index)`
-
-Per-request JSON artifact path:
-
-`code/outputs/<run_id>/requests/<scenario_id>/<structure_condition>/<processing_mode>/prefix_<idx|full>.json`
-
-Artifacts include:
-
-- run/scenario/condition metadata
-- prompt payload
-- model settings
-- timestamps
-- raw response
-- parsed output
-- error metadata
-- status
-
-With `resume_behavior="skip_completed"`, reruns continue unfinished work only.
-
-## Metrics
-
-### Full Transcript
-
-- `assignment_accuracy`
-- `unit_assignment_accuracy`
-- `completion_accuracy`
-- `final_state_accuracy`
-- `completion_outcome_accuracy` (optional)
-
-### Incremental
-
-Per-prefix and aggregated:
-
-- `assignment_accuracy`
-- `unit_assignment_accuracy`
-- `completion_accuracy`
-- `current_state_accuracy`
-- `assignment_detection_latency`
-- `completion_detection_latency`
-
-## Outputs
-
-Per run (`code/outputs/<run_id>/tables/`):
-
-- `full_transcript_per_scenario.csv`
-- `incremental_per_scenario.csv`
-- `full_transcript_summary.csv`
-- `incremental_summary.csv`
-- `combined_condition_summary.csv`
-- `all_condition_rows.csv`
-- `prefix_level_metrics.csv` (if enabled)
-
-Batch (repeated runs) (`code/outputs/<run_tag>__batch/tables/`):
-
-- `full_transcript_summary.csv` (mean/std/ci95)
-- `incremental_summary.csv` (mean/std/ci95)
-- `combined_condition_summary.csv`
-- `all_condition_rows.csv`
-- `per_scenario_summary.csv`
-- `overall_summary.csv`
+The paper's main conclusion is that transcript simplification has only small effects in this controlled setup. The most persistent weakness is grounding the responsible unit, not detecting assignment or completion itself.
 
 ## Run
 
-1. Install dependencies:
+Install dependencies:
 
 ```powershell
 python -m pip install -r code/requirements.txt
 ```
 
-2. Set API key for live mode:
+Set the API key for live evaluation:
 
 ```powershell
 $env:OPENAI_API_KEY='YOUR_KEY'
 ```
 
-3. Run notebook:
-
-- `code/evaluation_notebook.ipynb`
-
-4. Run tests:
+Run tests:
 
 ```powershell
 python -m pytest -q
 ```
 
-5. Optional dataset validation:
+Validate the dataset:
 
 ```powershell
 python scripts/validate_dataset.py
 ```
+
+Execute the main experiment in:
+
+- `code/evaluation_notebook.ipynb`
+
+## Outputs
+
+Per-run artifacts are stored under:
+
+- `code/outputs/<run_id>/`
+
+Repeated-run summaries are stored under:
+
+- `code/outputs/<run_tag>__batch/`
+
+Key exported tables include:
+
+- `full_transcript_summary.csv`
+- `incremental_summary.csv`
+- `combined_condition_summary.csv`
+- `all_condition_rows.csv`
+- `terminal_convergence_per_scenario.csv`
+- `terminal_convergence_summary.csv`
+
+## Dataset Construction Materials
+
+Dataset-generation provenance and validation materials are documented in:
+
+- `README_DATASET_GENERATION.md`
+
+## Completion-Outcome Reanalysis
+
+The completion-outcome reanalysis materials are documented in:
+
+- `code/completion_outcome_reanalysis.ipynb`
