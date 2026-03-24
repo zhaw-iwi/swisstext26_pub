@@ -1,0 +1,8 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+We studied task-state monitoring in firefighter incident command as a bounded coordination-support capability for an incident-command dashboard.
+
+The central system-design question was whether this capability depends on speaker identities and explicit utterance boundaries, both of which can be expensive or brittle to obtain from radio communication. For the controlled setting studied here, the answer is largely no: reduced transcript structure does not materially change the overall task-monitoring performance profile. The main remaining weaknesses are grounding the responsible unit and capturing the reported completion result rather than detecting assignment or completion itself, and both remain broadly similar across transcript conditions.
+
+More broadly, this suggests that some coordination-support functions may be feasible without heavy transcript preprocessing. At the same time, the present evidence remains deliberately narrow: it comes from a controlled synthetic dataset, from text rather than raw audio, and from a closed-world monitoring task. Future work should therefore test whether the same pattern holds under noisier audio pipelines, less linear communication, and stronger ambiguity, while improving unit-assignment grounding, evidence presentation, and human-in-the-loop integration into command workflows.

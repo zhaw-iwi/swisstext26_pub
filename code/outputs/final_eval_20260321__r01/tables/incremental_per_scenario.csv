@@ -1,0 +1,16 @@
+run_id,run_index,scenario_id,structure_condition,processing_mode,assignment_accuracy,unit_assignment_accuracy,completion_accuracy,current_state_accuracy,assignment_detection_latency,completion_detection_latency,assignment_detection_miss_rate,completion_detection_miss_rate
+final_eval_20260321__r01,1,S1,structured_dialogue,incremental,0.9473684210526315,0.7543859649122807,1.0,0.9473684210526315,0.6666666666666666,0.0,0.0,0.0
+final_eval_20260321__r01,1,S1,no_speaker,incremental,0.9473684210526315,0.7543859649122807,1.0,0.9473684210526315,0.3333333333333333,0.0,0.0,0.0
+final_eval_20260321__r01,1,S1,continuous_transcript,incremental,0.9473684210526315,0.7719298245614035,1.0,0.9473684210526315,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S2,structured_dialogue,incremental,0.9365079365079365,0.8412698412698413,0.9841269841269841,0.9206349206349206,1.3333333333333333,0.0,0.0,0.0
+final_eval_20260321__r01,1,S2,no_speaker,incremental,0.9365079365079365,0.8412698412698413,0.9682539682539683,0.9047619047619048,1.3333333333333333,0.0,0.0,0.0
+final_eval_20260321__r01,1,S2,continuous_transcript,incremental,0.9523809523809523,0.8571428571428571,0.9682539682539683,0.9206349206349206,1.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S3,structured_dialogue,incremental,1.0,0.9375,1.0,1.0,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S3,no_speaker,incremental,1.0,0.9375,1.0,1.0,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S3,continuous_transcript,incremental,1.0,0.9375,1.0,1.0,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S4,structured_dialogue,incremental,1.0,0.9166666666666666,0.9305555555555556,0.9305555555555556,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S4,no_speaker,incremental,1.0,0.9166666666666666,0.9305555555555556,0.9305555555555556,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S4,continuous_transcript,incremental,1.0,0.9166666666666666,0.9305555555555556,0.9305555555555556,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S5,structured_dialogue,incremental,1.0,0.8636363636363636,1.0,1.0,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S5,no_speaker,incremental,1.0,0.8636363636363636,1.0,1.0,0.0,0.0,0.0,0.0
+final_eval_20260321__r01,1,S5,continuous_transcript,incremental,1.0,0.8636363636363636,1.0,1.0,0.0,0.0,0.0,0.0

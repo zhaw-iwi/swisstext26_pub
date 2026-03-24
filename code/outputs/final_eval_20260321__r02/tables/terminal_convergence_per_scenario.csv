@@ -1,0 +1,16 @@
+run_id,run_index,scenario_id,structure_condition,assignment_terminal_gap,unit_assignment_terminal_gap,completion_terminal_gap,state_terminal_gap
+final_eval_20260321__r02,2,S3,structured_dialogue,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S3,no_speaker,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S3,continuous_transcript,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S1,continuous_transcript,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S1,no_speaker,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S1,structured_dialogue,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S2,continuous_transcript,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S2,no_speaker,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S2,structured_dialogue,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S5,no_speaker,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S5,continuous_transcript,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S5,structured_dialogue,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S4,continuous_transcript,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S4,no_speaker,0.0,0.0,0.0,0.0
+final_eval_20260321__r02,2,S4,structured_dialogue,0.0,0.0,0.0,0.0

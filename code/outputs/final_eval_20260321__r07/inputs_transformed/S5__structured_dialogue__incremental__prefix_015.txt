@@ -1,0 +1,15 @@
+Einsatzleitung: An Alle von Einsatzleitung, Meldung: Dachstockbrand Reihenhaus Birkenweg, Rauch rueckseitig aus der Dachhaut, Bewohner draussen, Schluss
+Drehleiter: An Einsatzleitung von Drehleiter, Meldung: rueckt rueckseitig an, Schluss
+Angriffstrupp: An Einsatzleitung von Angriffstrupp, Meldung: vor Ort, keine offenen Flammen aussen, Rauch aus zwei Feldern der Dachhaut, Schluss
+Einsatzleitung: An Drehleiter von Einsatzleitung, Befehl: Anleiterbereitschaft an der Rueckseite erstellen und Beleuchtung setzen, antworten
+Drehleiter: Drehleiter verstanden, Anleiterbereitschaft Rueckseite und Beleuchtung werden erstellt, Schluss
+Einsatzleitung: An Wassertrupp von Einsatzleitung, Befehl: Sicherungsleitung Rueckseite bis Anleiterpunkt vorziehen und Wasser am Verteiler bereitstellen, antworten
+Wassertrupp: Wassertrupp korrekt, Sicherungsleitung Rueckseite bis Anleiterpunkt, Wasser am Verteiler bereit, Schluss
+Wassertrupp: An Einsatzleitung von Wassertrupp, Meldung: Sicherungsleitung Rueckseite steht, Wasser am Verteiler ist bereit, Schluss
+Einsatzleitung: An Angriffstrupp von Einsatzleitung, Befehl: nach Meldung Drehleiter ueber Rueckseite vorgehen, Dachstock Rueckseite oeffnen, Glutnester suchen, mit Waermebild beurteilen und bei Fund mit Kleinloeschgeraet abloeschen, Sicherungsleitung Rueckseite steht, antworten
+Angriffstrupp: Angriffstrupp wiederholt, nach Meldung Drehleiter ueber Rueckseite vorgehen, Dachstock oeffnen, Glutnester suchen und bei Fund abloeschen, Waermebild dabei, verstanden, Schluss
+Drehleiter: An Einsatzleitung von Drehleiter, Meldung: Anleiterbereitschaft Rueckseite steht, Beleuchtung steht ebenfalls, Schluss
+Angriffstrupp: An Einsatzleitung von Angriffstrupp, Meldung: ueber Rueckseite im Dachstock, offene Flammen keine, aber Glut in zwei Sparrenfeldern, Decke wird weiter aufgenommen, Schluss
+Einsatzleitung: An Angriffstrupp von Einsatzleitung, Meldung: Glut in zwei Sparrenfeldern bestaetigt, Abschluss nach dem Abloeschen melden
+Angriffstrupp: Angriffstrupp verstanden, Glutnester in zwei Sparrenfeldern abloeschen, Rueckmeldung nach Abschluss, Schluss
+Einsatzleitung: An Kontrolltrupp von Einsatzleitung, Befehl: nach Abschluss Angriffstrupp Schlusskontrolle Dachstock mit Waermebild durchfuehren, antworten

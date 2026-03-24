@@ -1,0 +1,4 @@
+structure_condition,assignment_accuracy,unit_assignment_accuracy,completion_accuracy,final_state_accuracy,completion_outcome_accuracy
+continuous_transcript,1.0,1.0,0.9333333333333332,0.9333333333333332,0.0
+no_speaker,1.0,1.0,0.9333333333333332,0.9333333333333332,0.0
+structured_dialogue,1.0,1.0,0.9333333333333332,0.9333333333333332,0.0

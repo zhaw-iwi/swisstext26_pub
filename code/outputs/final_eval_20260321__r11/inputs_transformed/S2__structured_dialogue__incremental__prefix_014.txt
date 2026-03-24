@@ -1,0 +1,14 @@
+Einsatzleitung: An Alle von Einsatzleitung, Meldung: Tiefgaragenbrand Wohnblock Lindenhof, Zufahrt ueber Rampe West, starker Rauch aus Garagentor, Schluss
+Angriffstrupp: An Einsatzleitung von Angriffstrupp, Meldung: vor Ort an Rampe West, Sicht schlecht, keine Personen sichtbar, Schluss
+Einsatzleitung: An Sicherheitstrupp von Einsatzleitung, Befehl: Stromabschaltung Tiefgarage im Vorraum veranlassen und Garagentor auf Handbetrieb sichern, antworten
+Sicherheitstrupp: Sicherheitstrupp verstanden, Stromabschaltung und Tor auf Handbetrieb werden veranlasst, Schluss
+Einsatzleitung: An Wassertrupp von Einsatzleitung, Befehl: Schlauchleitung ab Vorraum bis Rampe West vorziehen, Wasser marsch fuer Angriffstrupp bereitstellen, antworten
+Wassertrupp: Wassertrupp verstanden, Schlauchleitung bis Rampe West, Wasser fuer Angriffstrupp wird bereitgestellt, Schluss
+Sicherheitstrupp: An Einsatzleitung von Sicherheitstrupp, Meldung: Tiefgarage stromlos, Garagentor auf Handbetrieb gesichert, Schluss
+Wassertrupp: An Einsatzleitung von Wassertrupp, Meldung: Schlauchleitung steht bis Rampe West, Wasser marsch moeglich, Zugang ueber Vorraum frei, Schluss
+Einsatzleitung: An Angriffstrupp von Einsatzleitung, Befehl: Brandherd in Parkfeld B lokalisieren und mit einem C-Rohr abloeschen, Zugang ueber Rampe West, antworten
+Angriffstrupp: Angriffstrupp verstanden, Parkfeld B ueber Rampe West, ein C-Rohr zur Brandbekaempfung, Schluss
+Angriffstrupp: An Einsatzleitung von Angriffstrupp, Meldung: brennender Personenwagen in Parkfeld B12 gefunden, ein Fahrzeug daneben waermebeaufschlagt, Abschirmung mit Spruehstrahl steht, Loeschangriff laeuft, Schluss
+Einsatzleitung: An Messgruppe von Einsatzleitung, Befehl: im Vorraum Nord bereitstellen, CO-Nachkontrolle erst nach Freigabe Angriffstrupp, antworten
+Messgruppe: Messgruppe verstanden, Bereitstellung Vorraum Nord, Nachkontrolle nach Freigabe Angriffstrupp
+Angriffstrupp: An Einsatzleitung von Angriffstrupp, Meldung: offenes Feuer am Fahrzeug B12 aus, Nachloescharbeiten laufen, Fahrzeug daneben nur noch maessig erwaermt, Schluss

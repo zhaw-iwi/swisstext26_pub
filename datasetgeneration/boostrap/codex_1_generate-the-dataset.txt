@@ -1,0 +1,45 @@
+You are working inside a research repository and must create a controlled synthetic dataset for firefighter radio communication.
+
+Your task is to generate a new dataset from scratch, following the grounded instructions and source-note files in:
+
+./.agents/datasetgeneration/dataset_generation.md
+./.agents/datasetgeneration/source_notes_sprechregeln.md
+./.agents/datasetgeneration/source_notes_real_transcript.md
+./.agents/datasetgeneration/source_notes_einsatzfuehrung.md
+
+Read these files carefully before doing any work.
+
+Objective:
+Create a small research-grade synthetic dataset of firefighter radio scenarios that exactly follows the fixed JSON schema specified in:
+./.agents/datasetgeneration/dataset_generation.md
+
+Requirements:
+1. Follow the schema exactly. Do not add fields. Do not rename fields.
+2. Ground communication structure in the Sprechregeln source notes.
+3. Ground surface realism in the real transcript source notes.
+4. Ground task selection and task progression in the Einsatzführung source notes.
+5. Create a dataset that is more representative than a perfectly clean toy dataset.
+6. Include realistic variation across scenarios.
+7. Include some controlled difficulty, such as ambiguous updates, delayed confirmations, incomplete tasks, partial progress messages, or other realistic friction, but remain fully internally coherent.
+8. Keep the dataset suitable for the closed-world monitoring task with predefined tasks.
+9. Ensure every scenario is consistent between messages, predefined_tasks, and gold_task_states.
+10. Ensure the dataset is reproducible and clearly structured.
+
+Deliverable:
+1. Create exactly 5 scenario JSON files.
+2. Place them in a sensible dataset folder inside the repository.
+3. Use stable filenames such as s1.json to s5.json unless the repository already has a preferred naming convention.
+4. Also create a short markdown file named DATASET_CONSTRUCTION_LOG.md in the same dataset folder.
+
+The construction log must briefly document:
+1. which markdown guidance files were used
+2. how many scenarios were created
+3. which kinds of realism variation were intentionally included
+4. any important design decisions
+
+Before writing files, inspect the repository structure and choose locations consistent with the existing project.
+
+When finished, provide:
+1. the paths of all created files
+2. a brief summary of the scenario set
+3. a short note on how representativeness was improved relative to a very clean synthetic baseline

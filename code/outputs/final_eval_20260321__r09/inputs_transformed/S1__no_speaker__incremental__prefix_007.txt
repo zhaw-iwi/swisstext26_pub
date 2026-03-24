@@ -1,0 +1,7 @@
+An Angriffstrupp und Wassertrupp von Einsatzleitung, Meldung: Kuechenbrand im 2. Obergeschoss links, Verrauchung im Treppenhaus, Personenlage unklar, Angriffstrupp und Wassertrupp antworten
+Angriffstrupp verstanden, ruecken vor zum Hauseingang
+Wassertrupp verstanden, Schluss
+An Einsatzleitung von Angriffstrupp, Meldung: vor Ort, schwarzer Rauch aus Kuechenfenster Hofseite, Treppenhaus leicht verraucht, Zugang bis Wohnungstuer frei, Schluss
+An Angriffstrupp von Einsatzleitung, Befehl: Personensuche Wohnung 2. Obergeschoss links, Zugang ueber Treppenhaus, mit Atemschutz, antworten
+Angriffstrupp wiederholt, Personensuche 2. Obergeschoss links ueber Treppenhaus, mit Atemschutz, verstanden, Schluss
+An Wassertrupp von Einsatzleitung, Befehl: Wasserversorgung ab Hydrant Nord bis Hauseingang erstellen, antworten

@@ -1,0 +1,25 @@
+{
+  "task_states": [
+    {
+      "task_id": "T1",
+      "assigned": true,
+      "assigned_unit": "Drehleiter",
+      "completed": true,
+      "completion_outcome": "Anleiterbereitschaft Rueckseite und Beleuchtung stehen"
+    },
+    {
+      "task_id": "T2",
+      "assigned": true,
+      "assigned_unit": "Angriffstrupp",
+      "completed": true,
+      "completion_outcome": "Glutnester in zwei Sparrenfeldern abgeloescht, Waermebild ohne Hotspot"
+    },
+    {
+      "task_id": "T3",
+      "assigned": true,
+      "assigned_unit": "Kontrolltrupp",
+      "completed": true,
+      "completion_outcome": "Schlusskontrolle negativ: kein Rauch, keine erhoehte Temperatur, Nachbartrennwand ohne Auffaelligkeit"
+    }
+  ]
+}

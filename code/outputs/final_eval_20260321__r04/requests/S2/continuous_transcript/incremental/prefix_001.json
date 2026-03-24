@@ -1,0 +1,57 @@
+{
+  "work_key": {
+    "run_id": "final_eval_20260321__r04",
+    "scenario_id": "S2",
+    "structure_condition": "continuous_transcript",
+    "processing_mode": "incremental",
+    "prefix_index": 1
+  },
+  "run_id": "final_eval_20260321__r04",
+  "scenario_id": "S2",
+  "structure_condition": "continuous_transcript",
+  "processing_mode": "incremental",
+  "prefix_index": 1,
+  "prompt_payload": {
+    "system": "﻿You are monitoring predefined operational firefighter tasks.\n\nYour job is not to invent tasks.\nOnly assess the state of the provided task list from transcript evidence.\n\nRules:\n- Be conservative and evidence-based.\n- Do not hallucinate assignments, units, completions, or outcomes.\n- If evidence is insufficient, use assigned=false, completed=false, assigned_unit=null, completion_outcome=null.\n- Never output tasks that are not in the predefined task list.\n- Return JSON only.\n",
+    "user": "Scenario: S2\nStructure condition: continuous_transcript\nProcessing mode: incremental\nPrefix index: 1\n\nPredefined task list (JSON):\n[\n  {\n    \"task_id\": \"T1\",\n    \"task_name\": \"Stromabschaltung Tiefgarage sichern\"\n  },\n  {\n    \"task_id\": \"T2\",\n    \"task_name\": \"Brandherd in Parkfeld B lokalisieren und abloeschen\"\n  },\n  {\n    \"task_id\": \"T3\",\n    \"task_name\": \"Erste CO-Messung im Vorraum und in der Rampe durchfuehren\"\n  }\n]\n\nState-tracking objective:\nFor each predefined task_id, determine:\n1. assigned (true/false)\n2. assigned_unit (string or null)\n3. completed (true/false)\n4. completion_outcome (string or null)\n\nTranscript:\nAn Alle von Einsatzleitung, Meldung: Tiefgaragenbrand Wohnblock Lindenhof, Zufahrt ueber Rampe West, starker Rauch aus Garagentor, Schluss\n\nOutput schema:\n{\"task_states\":[{\"task_id\":\"string\",\"assigned\":\"boolean\",\"assigned_unit\":\"string|null\",\"completed\":\"boolean\",\"completion_outcome\":\"string|null\"}]}\n\nOutput requirements:\n- Return valid JSON only.\n- Include every task_id exactly once in task_states.\n- Keep fields conservative when uncertain.\n"
+  },
+  "model_settings": {
+    "model_name": "gpt-5.2",
+    "temperature": 0.0,
+    "max_tokens": 1200,
+    "timeout_seconds": 60,
+    "retry_count": 2,
+    "provider_mode": "live",
+    "prompt_version_tag": "v3_known_task_monitoring"
+  },
+  "request_timestamp": "2026-03-21T22:32:14.842841+00:00",
+  "response_timestamp": "2026-03-21T22:32:16.555506+00:00",
+  "response_raw_text": "{\"task_states\":[{\"task_id\":\"T1\",\"assigned\":false,\"assigned_unit\":null,\"completed\":false,\"completion_outcome\":null},{\"task_id\":\"T2\",\"assigned\":false,\"assigned_unit\":null,\"completed\":false,\"completion_outcome\":null},{\"task_id\":\"T3\",\"assigned\":false,\"assigned_unit\":null,\"completed\":false,\"completion_outcome\":null}]}",
+  "parsed_output": {
+    "task_states": [
+      {
+        "task_id": "T1",
+        "assigned": false,
+        "assigned_unit": null,
+        "completed": false,
+        "completion_outcome": null
+      },
+      {
+        "task_id": "T2",
+        "assigned": false,
+        "assigned_unit": null,
+        "completed": false,
+        "completion_outcome": null
+      },
+      {
+        "task_id": "T3",
+        "assigned": false,
+        "assigned_unit": null,
+        "completed": false,
+        "completion_outcome": null
+      }
+    ]
+  },
+  "error": null,
+  "status": "completed"
+}

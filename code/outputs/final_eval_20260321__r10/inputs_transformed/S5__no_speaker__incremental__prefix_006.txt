@@ -1,0 +1,6 @@
+An Alle von Einsatzleitung, Meldung: Dachstockbrand Reihenhaus Birkenweg, Rauch rueckseitig aus der Dachhaut, Bewohner draussen, Schluss
+An Einsatzleitung von Drehleiter, Meldung: rueckt rueckseitig an, Schluss
+An Einsatzleitung von Angriffstrupp, Meldung: vor Ort, keine offenen Flammen aussen, Rauch aus zwei Feldern der Dachhaut, Schluss
+An Drehleiter von Einsatzleitung, Befehl: Anleiterbereitschaft an der Rueckseite erstellen und Beleuchtung setzen, antworten
+Drehleiter verstanden, Anleiterbereitschaft Rueckseite und Beleuchtung werden erstellt, Schluss
+An Wassertrupp von Einsatzleitung, Befehl: Sicherungsleitung Rueckseite bis Anleiterpunkt vorziehen und Wasser am Verteiler bereitstellen, antworten

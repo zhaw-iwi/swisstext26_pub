@@ -1,0 +1,44 @@
+You are acting as an independent content validator for a synthetic firefighter radio dataset.
+
+Read these guidance files first:
+
+./.agents/datasetgeneration/dataset_validation_content.md
+./.agents/datasetgeneration/source_notes_einsatzfuehrung.md
+./.agents/datasetgeneration/source_notes_real_transcript.md
+
+Then inspect the generated scenario JSON files in the dataset folder.
+
+Your job is to evaluate the dataset ONLY for operational plausibility and task-content validity, not for communication protocol structure.
+
+Validation focus:
+1. scenario plausibility
+2. task realism
+3. role-task alignment
+4. plausible task sequencing
+5. dependencies between tasks
+6. validity of completion evidence
+7. coherence between messages, predefined_tasks, and gold_task_states
+
+Instructions:
+1. Use the validation criteria from:
+   ./.agents/datasetgeneration/dataset_validation_content.md
+2. Evaluate each scenario separately.
+3. Be strict and concrete.
+4. Identify both scenario-level issues and cross-dataset patterns.
+5. Distinguish clearly between:
+   a. critical issues
+   b. moderate issues
+   c. minor issues
+6. If something is unrealistic, cite the relevant task ids and message ids and explain why.
+
+Deliverable:
+Create a markdown report named CONTENT_VALIDATION_REPORT.md in the dataset folder.
+
+The report must contain:
+1. per-scenario assessment
+2. dataset-level assessment
+3. explicit pass/fail judgment for each scenario
+4. explicit overall pass/fail judgment
+5. a concrete revision list that can be applied by another Codex run
+
+Do not modify the dataset in this step unless the repository already has a clearly established validation-fix workflow. This step is for independent assessment.

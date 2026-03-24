@@ -1,0 +1,4 @@
+Einsatzleitung: An Alle von Einsatzleitung, Meldung: Werkstattbrand Industriehof Ost, zwei Gasflaschen im hinteren Bereich gemeldet, Zufahrt eng, Schluss
+Angriffstrupp: An Einsatzleitung von Angriffstrupp, Meldung: vor Ort Westseite, Werkbankbrand im Innenraum sichtbar, zwei Gasflaschen hinten rechts hinter Regal erkennbar, Zugang ueber Westtuere moeglich, Schluss
+Einsatzleitung: An Verkehrstrupp von Einsatzleitung, Befehl: Zufahrt Ost sperren und Sicherheitsbereich fuenfzig Meter einrichten, antworten
+Verkehrstrupp: Verkehrstrupp verstanden, Zufahrt Ost und Sicherheitsbereich fuenfzig Meter, Schluss

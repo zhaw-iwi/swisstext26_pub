@@ -1,0 +1,25 @@
+{
+  "task_states": [
+    {
+      "task_id": "T1",
+      "assigned": true,
+      "assigned_unit": "Sicherheitstrupp",
+      "completed": true,
+      "completion_outcome": "Tiefgarage stromlos, Garagentor auf Handbetrieb gesichert"
+    },
+    {
+      "task_id": "T2",
+      "assigned": true,
+      "assigned_unit": "Angriffstrupp",
+      "completed": true,
+      "completion_outcome": "Brennender PKW in Parkfeld B12 lokalisiert; offenes Feuer aus; Nachlöscharbeiten abgeschlossen, keine offenen Glutnester mehr sichtbar"
+    },
+    {
+      "task_id": "T3",
+      "assigned": true,
+      "assigned_unit": "Messgruppe",
+      "completed": false,
+      "completion_outcome": null
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+You are revising a synthetic firefighter radio dataset after independent validation.
+
+Read these files first:
+
+./.agents/datasetgeneration/dataset_generation.md
+./.agents/datasetgeneration/dataset_validation_structure.md
+./.agents/datasetgeneration/dataset_validation_content.md
+./.agents/datasetgeneration/source_notes_sprechregeln.md
+./.agents/datasetgeneration/source_notes_real_transcript.md
+./.agents/datasetgeneration/source_notes_einsatzfuehrung.md
+
+Also read the validation reports in the dataset folder:
+1. STRUCTURE_VALIDATION_REPORT.md
+2. CONTENT_VALIDATION_REPORT.md
+
+Your task is to revise the dataset so that it better satisfies both validation frameworks while preserving:
+1. the fixed JSON schema
+2. the closed-world predefined-task setup
+3. overall scenario diversity
+4. internal consistency
+
+Revision policy:
+1. Fix minor and moderate issues locally where possible.
+2. Regenerate an entire scenario only if the validation reports indicate systematic or irreparable problems in that scenario.
+3. Preserve good parts of the dataset.
+4. Do not simplify the dataset into an unrealistically clean toy set.
+5. Keep realistic variability and controlled difficulty.
+
+Deliverables:
+1. Update the scenario JSON files as needed.
+2. Create a markdown file named DATASET_REVISION_LOG.md in the dataset folder.
+
+The revision log must document:
+1. which files were changed
+2. which issues were fixed
+3. whether each fix was local or full-scenario regeneration
+4. any remaining limitations
+
+At the end, provide:
+1. the list of changed files
+2. a concise summary of what improved
+3. a note on whether the dataset is now ready for another validation round

@@ -1,0 +1,159 @@
+{
+  "scenario_id": "S2",
+  "scenario_name": "Tiefgaragenbrand Wohnblock",
+  "metadata": {
+    "language": "de",
+    "domain": "firefighter_radio",
+    "synthetic": true
+  },
+  "messages": [
+    {
+      "id": 1,
+      "speaker": "Einsatzleitung",
+      "text": "An Alle von Einsatzleitung, Meldung: Tiefgaragenbrand Wohnblock Lindenhof, Zufahrt ueber Rampe West, starker Rauch aus Garagentor, Schluss"
+    },
+    {
+      "id": 2,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: vor Ort an Rampe West, Sicht schlecht, keine Personen sichtbar, Schluss"
+    },
+    {
+      "id": 3,
+      "speaker": "Einsatzleitung",
+      "text": "An Sicherheitstrupp von Einsatzleitung, Befehl: Stromabschaltung Tiefgarage im Vorraum veranlassen und Garagentor auf Handbetrieb sichern, antworten"
+    },
+    {
+      "id": 4,
+      "speaker": "Sicherheitstrupp",
+      "text": "Sicherheitstrupp verstanden, Stromabschaltung und Tor auf Handbetrieb werden veranlasst, Schluss"
+    },
+    {
+      "id": 5,
+      "speaker": "Einsatzleitung",
+      "text": "An Wassertrupp von Einsatzleitung, Befehl: Schlauchleitung ab Vorraum bis Rampe West vorziehen, Wasser marsch fuer Angriffstrupp bereitstellen, antworten"
+    },
+    {
+      "id": 6,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Schlauchleitung bis Rampe West, Wasser fuer Angriffstrupp wird bereitgestellt, Schluss"
+    },
+    {
+      "id": 7,
+      "speaker": "Sicherheitstrupp",
+      "text": "An Einsatzleitung von Sicherheitstrupp, Meldung: Tiefgarage stromlos, Garagentor auf Handbetrieb gesichert, Schluss"
+    },
+    {
+      "id": 8,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: Schlauchleitung steht bis Rampe West, Wasser marsch moeglich, Zugang ueber Vorraum frei, Schluss"
+    },
+    {
+      "id": 9,
+      "speaker": "Einsatzleitung",
+      "text": "An Angriffstrupp von Einsatzleitung, Befehl: Brandherd in Parkfeld B lokalisieren und mit einem C-Rohr abloeschen, Zugang ueber Rampe West, antworten"
+    },
+    {
+      "id": 10,
+      "speaker": "Angriffstrupp",
+      "text": "Angriffstrupp verstanden, Parkfeld B ueber Rampe West, ein C-Rohr zur Brandbekaempfung, Schluss"
+    },
+    {
+      "id": 11,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: brennender Personenwagen in Parkfeld B12 gefunden, ein Fahrzeug daneben waermebeaufschlagt, Abschirmung mit Spruehstrahl steht, Loeschangriff laeuft, Schluss"
+    },
+    {
+      "id": 12,
+      "speaker": "Einsatzleitung",
+      "text": "An Messgruppe von Einsatzleitung, Befehl: im Vorraum Nord bereitstellen, CO-Nachkontrolle erst nach Freigabe Angriffstrupp, antworten"
+    },
+    {
+      "id": 13,
+      "speaker": "Messgruppe",
+      "text": "Messgruppe verstanden, Bereitstellung Vorraum Nord, Nachkontrolle nach Freigabe Angriffstrupp"
+    },
+    {
+      "id": 14,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: offenes Feuer am Fahrzeug B12 aus, Nachloescharbeiten laufen, Fahrzeug daneben nur noch maessig erwaermt, Schluss"
+    },
+    {
+      "id": 15,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: Schlauchreserve liegt im Vorraum, Rampe West fuer Messgruppe frei bis Rauchkante, Schluss"
+    },
+    {
+      "id": 16,
+      "speaker": "Einsatzleitung",
+      "text": "An Messgruppe von Einsatzleitung, Befehl: offenes Feuer aus, erste Messung im Vorraum und in der Rampe beginnen, Tiefgarage selbst noch nicht betreten, antworten"
+    },
+    {
+      "id": 17,
+      "speaker": "Messgruppe",
+      "text": "Messgruppe verstanden, erste Messung Vorraum und Rampe, Tiefgarage selbst bleibt vorerst ausgespart, Schluss"
+    },
+    {
+      "id": 18,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: Nachloescharbeiten an Fahrzeug B12 abgeschlossen, keine offenen Glutnester mehr sichtbar, Schluss"
+    },
+    {
+      "id": 19,
+      "speaker": "Einsatzleitung",
+      "text": "An Messgruppe von Einsatzleitung, Befehl: Bereich Vorraum und Rampe bis zu eurer Freimeldung gesperrt halten, Schluss"
+    },
+    {
+      "id": 20,
+      "speaker": "Messgruppe",
+      "text": "An Einsatzleitung von Messgruppe, Meldung: erste Messung im Vorraum 60 ppm CO, Rampe noch deutlich verraucht, Tiefgarage nicht frei, CO-Nachkontrolle noch nicht abgeschlossen, Schluss"
+    },
+    {
+      "id": 21,
+      "speaker": "Einsatzleitung",
+      "text": "An Alle von Einsatzleitung, Meldung: Fahrzeugbrand abgeloescht, Bereich Vorraum und Rampe bleibt bis zur Freimeldung der Messgruppe gesperrt, Schluss"
+    }
+  ],
+  "predefined_tasks": [
+    {
+      "task_id": "T1",
+      "task_name": "Stromabschaltung Tiefgarage sichern"
+    },
+    {
+      "task_id": "T2",
+      "task_name": "Brandherd in Parkfeld B lokalisieren und abloeschen"
+    },
+    {
+      "task_id": "T3",
+      "task_name": "Erste CO-Messung im Vorraum und in der Rampe durchfuehren"
+    }
+  ],
+  "gold_task_states": [
+    {
+      "task_id": "T1",
+      "assigned": true,
+      "assigned_unit": "Sicherheitstrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Sicherheitstrupp, Meldung: Tiefgarage stromlos, Garagentor auf Handbetrieb gesichert, Schluss",
+      "assignment_message_id": 3,
+      "completion_message_id": 7
+    },
+    {
+      "task_id": "T2",
+      "assigned": true,
+      "assigned_unit": "Angriffstrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Angriffstrupp, Meldung: Nachloescharbeiten an Fahrzeug B12 abgeschlossen, keine offenen Glutnester mehr sichtbar, Schluss",
+      "assignment_message_id": 9,
+      "completion_message_id": 18
+    },
+    {
+      "task_id": "T3",
+      "assigned": true,
+      "assigned_unit": "Messgruppe",
+      "completed": false,
+      "completion_outcome": "An Einsatzleitung von Messgruppe, Meldung: erste Messung im Vorraum 60 ppm CO, Rampe noch deutlich verraucht, Tiefgarage nicht frei, CO-Nachkontrolle noch nicht abgeschlossen, Schluss",
+      "assignment_message_id": 12,
+      "completion_message_id": null
+    }
+  ]
+}

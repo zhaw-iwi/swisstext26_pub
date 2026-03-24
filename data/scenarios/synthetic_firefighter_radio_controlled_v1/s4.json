@@ -1,0 +1,174 @@
+{
+  "scenario_id": "S4",
+  "scenario_name": "Werkstattbrand mit Gasflaschen",
+  "metadata": {
+    "language": "de",
+    "domain": "firefighter_radio",
+    "synthetic": true
+  },
+  "messages": [
+    {
+      "id": 1,
+      "speaker": "Einsatzleitung",
+      "text": "An Alle von Einsatzleitung, Meldung: Werkstattbrand Industriehof Ost, zwei Gasflaschen im hinteren Bereich gemeldet, Zufahrt eng, Schluss"
+    },
+    {
+      "id": 2,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: vor Ort Westseite, Werkbankbrand im Innenraum sichtbar, zwei Gasflaschen hinten rechts hinter Regal erkennbar, Zugang ueber Westtuere moeglich, Schluss"
+    },
+    {
+      "id": 3,
+      "speaker": "Einsatzleitung",
+      "text": "An Verkehrstrupp von Einsatzleitung, Befehl: Zufahrt Ost sperren und Sicherheitsbereich fuenfzig Meter einrichten, antworten"
+    },
+    {
+      "id": 4,
+      "speaker": "Verkehrstrupp",
+      "text": "Verkehrstrupp verstanden, Zufahrt Ost und Sicherheitsbereich fuenfzig Meter, Schluss"
+    },
+    {
+      "id": 5,
+      "speaker": "Einsatzleitung",
+      "text": "An Wassertrupp von Einsatzleitung, Befehl: Wasserversorgung Westseite aufbauen und Deckung fuer Kuehlung hinter Mauer herstellen, antworten"
+    },
+    {
+      "id": 6,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Wasserversorgung Westseite und Deckung hinter Mauer, Schluss"
+    },
+    {
+      "id": 7,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: Wasserversorgung Westseite steht, Deckung hinter Mauer eingerichtet, Kuehlung aus Deckung moeglich, Schluss"
+    },
+    {
+      "id": 8,
+      "speaker": "Einsatzleitung",
+      "text": "An Wassertrupp von Einsatzleitung, Befehl: Gasflaschen im hinteren Bereich aus Deckung kuehlen, Abstand halten, antworten"
+    },
+    {
+      "id": 9,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Kuehlung von aussen ueber Deckung, Abstand bleibt gross, Schluss"
+    },
+    {
+      "id": 10,
+      "speaker": "Einsatzleitung",
+      "text": "An Angriffstrupp von Einsatzleitung, Befehl: Werkbankbrand erst bei stehender Kuehlung von der Westtuere mit Schaum abloeschen, Gasflaschenlage laufend melden, antworten"
+    },
+    {
+      "id": 11,
+      "speaker": "Angriffstrupp",
+      "text": "Angriffstrupp verstanden, Schaumangriff ueber Westtuere erst bei stehender Kuehlung, Schluss"
+    },
+    {
+      "id": 12,
+      "speaker": "Verkehrstrupp",
+      "text": "An Einsatzleitung von Verkehrstrupp, Meldung: Zufahrt Ost gesperrt, Sicherheitsbereich steht, Personen aus Vorplatz draussen, Schluss"
+    },
+    {
+      "id": 13,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: Kuehlung auf beide Gasflaschen steht, eine Flasche am Ventil noch deutlich warm, Deckung wirkt, Schluss"
+    },
+    {
+      "id": 14,
+      "speaker": "Einsatzleitung",
+      "text": "An Angriffstrupp von Einsatzleitung, Befehl: Kuehlung steht, Werkbankbrand jetzt ueber Westtuere mit Schaum abloeschen, Lagerregal schuetzen, antworten"
+    },
+    {
+      "id": 15,
+      "speaker": "Angriffstrupp",
+      "text": "Angriffstrupp korrekt, Schaumangriff ueber Westtuere laeuft jetzt, Lagerregal wird gehalten, Schluss"
+    },
+    {
+      "id": 16,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: offenes Feuer an der Werkbank aus, Nachschaeumen laeuft, keine Ausbreitung auf Lagerregal, Schluss"
+    },
+    {
+      "id": 17,
+      "speaker": "Verkehrstrupp",
+      "text": "An Einsatzleitung von Verkehrstrupp, Meldung: Sicherheitsbereich fuenfzig Meter bleibt frei, Zufahrt Ost fuer weitere Fahrzeuge weiter gesperrt, Schluss"
+    },
+    {
+      "id": 18,
+      "speaker": "Einsatzleitung",
+      "text": "An Verkehrstrupp von Einsatzleitung, Befehl: Sicherheitsbereich beibehalten und Zufahrt Ost fuer weitere Mittel bei Bedarf freihalten, antworten"
+    },
+    {
+      "id": 19,
+      "speaker": "Verkehrstrupp",
+      "text": "Verkehrstrupp verstanden, Sicherheitsbereich bleibt bestehen, Zufahrt Ost kann bei Bedarf freigemacht werden, Schluss"
+    },
+    {
+      "id": 20,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: eine Gasflasche kalt, zweite am Ventil noch warm, Kuehlung laeuft weiter, Abschluss noch nicht erreicht, Schluss"
+    },
+    {
+      "id": 21,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: Nachschaeumen abgeschlossen, Werkbankbrand aus, keine Glutnester an Werkbank oder Lagerregal mehr sichtbar, Schluss"
+    },
+    {
+      "id": 22,
+      "speaker": "Einsatzleitung",
+      "text": "An Wassertrupp von Einsatzleitung, Befehl: Kuehlung aus Deckung weiterfuehren, Meldung wenn zweite Flasche kalt ist, antworten"
+    },
+    {
+      "id": 23,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Kuehlung aus Deckung laeuft weiter, Meldung bei kalter zweiter Flasche, Schluss"
+    },
+    {
+      "id": 24,
+      "speaker": "Einsatzleitung",
+      "text": "An Alle von Einsatzleitung, Meldung: Werkbankbrand aus, Sicherheitsbereich bleibt bestehen, Kuehlung an zweiter Gasflasche laeuft weiter, Einsatzstelle noch nicht frei, Schluss"
+    }
+  ],
+  "predefined_tasks": [
+    {
+      "task_id": "T1",
+      "task_name": "Zufahrt Ost sperren und Sicherheitsbereich einrichten"
+    },
+    {
+      "task_id": "T2",
+      "task_name": "Werkbankbrand mit Schaum abloeschen"
+    },
+    {
+      "task_id": "T3",
+      "task_name": "Gasflaschen kuehlen bis Kaltmeldung herstellen"
+    }
+  ],
+  "gold_task_states": [
+    {
+      "task_id": "T1",
+      "assigned": true,
+      "assigned_unit": "Verkehrstrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Verkehrstrupp, Meldung: Zufahrt Ost gesperrt, Sicherheitsbereich steht, Personen aus Vorplatz draussen, Schluss",
+      "assignment_message_id": 3,
+      "completion_message_id": 12
+    },
+    {
+      "task_id": "T2",
+      "assigned": true,
+      "assigned_unit": "Angriffstrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Angriffstrupp, Meldung: Nachschaeumen abgeschlossen, Werkbankbrand aus, keine Glutnester an Werkbank oder Lagerregal mehr sichtbar, Schluss",
+      "assignment_message_id": 10,
+      "completion_message_id": 21
+    },
+    {
+      "task_id": "T3",
+      "assigned": true,
+      "assigned_unit": "Wassertrupp",
+      "completed": false,
+      "completion_outcome": "An Einsatzleitung von Wassertrupp, Meldung: eine Gasflasche kalt, zweite am Ventil noch warm, Kuehlung laeuft weiter, Abschluss noch nicht erreicht, Schluss",
+      "assignment_message_id": 8,
+      "completion_message_id": null
+    }
+  ]
+}

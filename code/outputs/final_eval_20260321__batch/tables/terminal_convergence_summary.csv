@@ -1,0 +1,4 @@
+structure_condition,n_runs,assignment_terminal_gap_mean,assignment_terminal_gap_std,assignment_terminal_gap_ci95,unit_assignment_terminal_gap_mean,unit_assignment_terminal_gap_std,unit_assignment_terminal_gap_ci95,completion_terminal_gap_mean,completion_terminal_gap_std,completion_terminal_gap_ci95,state_terminal_gap_mean,state_terminal_gap_std,state_terminal_gap_ci95
+continuous_transcript,12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+no_speaker,12,0.0,0.0,0.0,0.0,0.0,0.0,0.005555555555555555,0.04303314829119352,0.010888888888888889,0.005555555555555555,0.04303314829119352,0.010888888888888889
+structured_dialogue,12,0.0,0.0,0.0,0.0,0.0,0.0,0.005555555555555555,0.04303314829119351,0.010888888888888885,0.005555555555555555,0.04303314829119351,0.010888888888888885

@@ -1,0 +1,51 @@
+{
+  "paths": {
+    "repo_root": "C:\\Data\\VSCodeWorkSpace\\swisstext26",
+    "input_data_dir": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\data\\scenarios\\synthetic_firefighter_radio_controlled_v1",
+    "output_root": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs",
+    "cache_dir": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\.cache"
+  },
+  "provider": {
+    "model_name": "gpt-5.2",
+    "api_key_env": "OPENAI_API_KEY",
+    "temperature": 0.0,
+    "max_tokens": 1200,
+    "timeout_seconds": 60,
+    "retry_count": 2,
+    "mode": "live"
+  },
+  "experiment": {
+    "run_count": 12,
+    "selected_scenarios": [],
+    "selected_structure_conditions": [
+      "structured_dialogue",
+      "no_speaker",
+      "continuous_transcript"
+    ],
+    "selected_processing_modes": [
+      "full_transcript",
+      "incremental"
+    ],
+    "incremental_prefix_policy": "every_message",
+    "api_batch_size": 8,
+    "resume_behavior": "skip_completed",
+    "output_run_tag": "final_eval_20260321",
+    "prompt_version_tag": "v3_known_task_monitoring"
+  },
+  "prompts": {
+    "system_prompt_path": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\prompts\\system_prompt.txt",
+    "user_prompt_template_path": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\prompts\\user_prompt_template.txt"
+  },
+  "evaluation": {
+    "export_tables": true,
+    "export_figures": true,
+    "export_prefix_level_metrics": true,
+    "export_detailed_condition_rows": true
+  },
+  "debug": {
+    "verbose": true,
+    "limit_scenarios": null,
+    "limit_work_items": null,
+    "save_transformed_inputs": true
+  }
+}
