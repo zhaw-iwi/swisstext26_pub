@@ -1,0 +1,149 @@
+{
+  "scenario_id": "S1",
+  "scenario_name": "Kuechenbrand Mehrfamilienhaus",
+  "metadata": {
+    "language": "de",
+    "domain": "firefighter_radio",
+    "synthetic": true
+  },
+  "messages": [
+    {
+      "id": 1,
+      "speaker": "Einsatzleitung",
+      "text": "An Angriffstrupp und Wassertrupp von Einsatzleitung, Meldung: Kuechenbrand im 2. Obergeschoss links, Verrauchung im Treppenhaus, Personenlage unklar, Angriffstrupp und Wassertrupp antworten"
+    },
+    {
+      "id": 2,
+      "speaker": "Angriffstrupp",
+      "text": "Angriffstrupp verstanden, ruecken vor zum Hauseingang"
+    },
+    {
+      "id": 3,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Schluss"
+    },
+    {
+      "id": 4,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: vor Ort, schwarzer Rauch aus Kuechenfenster Hofseite, Treppenhaus leicht verraucht, Zugang bis Wohnungstuer frei, Schluss"
+    },
+    {
+      "id": 5,
+      "speaker": "Einsatzleitung",
+      "text": "An Angriffstrupp von Einsatzleitung, Befehl: Personensuche Wohnung 2. Obergeschoss links, Zugang ueber Treppenhaus, mit Atemschutz, antworten"
+    },
+    {
+      "id": 6,
+      "speaker": "Angriffstrupp",
+      "text": "Angriffstrupp wiederholt, Personensuche 2. Obergeschoss links ueber Treppenhaus, mit Atemschutz, verstanden, Schluss"
+    },
+    {
+      "id": 7,
+      "speaker": "Einsatzleitung",
+      "text": "An Wassertrupp von Einsatzleitung, Befehl: Wasserversorgung ab Hydrant Nord bis Hauseingang erstellen, antworten"
+    },
+    {
+      "id": 8,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Wasserversorgung ab Hydrant Nord bis Hauseingang, Schluss"
+    },
+    {
+      "id": 9,
+      "speaker": "Einsatzleitung",
+      "text": "An Lueftungstrupp von Einsatzleitung, Befehl: Ueberdruckbeluefter am Hauseingang bereitstellen, Entrauchung erst nach Freigabe Angriffstrupp, antworten"
+    },
+    {
+      "id": 10,
+      "speaker": "Lueftungstrupp",
+      "text": "Lueftungstrupp verstanden, Ueberdruckbeluefter am Hauseingang in Bereitstellung, Schluss"
+    },
+    {
+      "id": 11,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: Wasserversorgung ab Hydrant Nord steht bis Hauseingang, Schluss"
+    },
+    {
+      "id": 12,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: Wohnung abgesucht, keine Personen in der Brandwohnung, Treppenhaus bis Wohnungstuer frei von Personen, Brand auf Kuechenbereich begrenzt, Schluss"
+    },
+    {
+      "id": 13,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: Brandherd in der Kueche niedergeschlagen, Kleinloeschgeraet im Einsatz, Nachkontrolle laeuft, Schluss"
+    },
+    {
+      "id": 14,
+      "speaker": "Einsatzleitung",
+      "text": "An Lueftungstrupp von Einsatzleitung, Befehl: Entrauchung Treppenhaus jetzt starten, Zugang fuer Angriffstrupp frei halten, antworten"
+    },
+    {
+      "id": 15,
+      "speaker": "Lueftungstrupp",
+      "text": "Lueftungstrupp korrekt, Entrauchung laeuft an"
+    },
+    {
+      "id": 16,
+      "speaker": "Lueftungstrupp",
+      "text": "An Einsatzleitung von Lueftungstrupp, Meldung: Ueberdruckbeluefter laeuft, Sicht im Erdgeschoss und 1. Obergeschoss frei, 2. Obergeschoss noch verraucht, Entrauchung noch nicht abgeschlossen, Schluss"
+    },
+    {
+      "id": 17,
+      "speaker": "Einsatzleitung",
+      "text": "An Lueftungstrupp von Einsatzleitung, Befehl: Treppenhaus bis zur Freimeldung gesperrt halten, weitere Rueckmeldung nach Lage, antworten"
+    },
+    {
+      "id": 18,
+      "speaker": "Lueftungstrupp",
+      "text": "Lueftungstrupp verstanden, Treppenhaus bleibt bis zur Freimeldung gesperrt, weitere Rueckmeldung nach Lage, Schluss"
+    },
+    {
+      "id": 19,
+      "speaker": "Einsatzleitung",
+      "text": "An Alle von Einsatzleitung, Meldung: Brandwohnung unter Kontrolle, Entrauchung im 2. Obergeschoss laeuft weiter, Bewohner bleiben ausserhalb, Schluss"
+    }
+  ],
+  "predefined_tasks": [
+    {
+      "task_id": "T1",
+      "task_name": "Wasserversorgung bis Hauseingang erstellen"
+    },
+    {
+      "task_id": "T2",
+      "task_name": "Personensuche Wohnung 2. Obergeschoss links"
+    },
+    {
+      "task_id": "T3",
+      "task_name": "Entrauchung Treppenhaus"
+    }
+  ],
+  "gold_task_states": [
+    {
+      "task_id": "T1",
+      "assigned": true,
+      "assigned_unit": "Wassertrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Wassertrupp, Meldung: Wasserversorgung ab Hydrant Nord steht bis Hauseingang, Schluss",
+      "assignment_message_id": 7,
+      "completion_message_id": 11
+    },
+    {
+      "task_id": "T2",
+      "assigned": true,
+      "assigned_unit": "Angriffstrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Angriffstrupp, Meldung: Wohnung abgesucht, keine Personen in der Brandwohnung, Treppenhaus bis Wohnungstuer frei von Personen, Brand auf Kuechenbereich begrenzt, Schluss",
+      "assignment_message_id": 5,
+      "completion_message_id": 12
+    },
+    {
+      "task_id": "T3",
+      "assigned": true,
+      "assigned_unit": "Lueftungstrupp",
+      "completed": false,
+      "completion_outcome": "An Einsatzleitung von Lueftungstrupp, Meldung: Ueberdruckbeluefter laeuft, Sicht im Erdgeschoss und 1. Obergeschoss frei, 2. Obergeschoss noch verraucht, Entrauchung noch nicht abgeschlossen, Schluss",
+      "assignment_message_id": 9,
+      "completion_message_id": null
+    }
+  ]
+}

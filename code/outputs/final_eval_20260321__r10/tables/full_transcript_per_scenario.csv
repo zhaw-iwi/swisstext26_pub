@@ -1,0 +1,16 @@
+run_id,run_index,scenario_id,structure_condition,processing_mode,assignment_accuracy,unit_assignment_accuracy,completion_accuracy,final_state_accuracy,completion_outcome_accuracy
+final_eval_20260321__r10,10,S1,structured_dialogue,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S1,no_speaker,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S1,continuous_transcript,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S2,structured_dialogue,full_transcript,1.0,1.0,0.6666666666666666,0.6666666666666666,0.0
+final_eval_20260321__r10,10,S2,no_speaker,full_transcript,1.0,1.0,0.6666666666666666,0.6666666666666666,0.0
+final_eval_20260321__r10,10,S2,continuous_transcript,full_transcript,1.0,1.0,0.6666666666666666,0.6666666666666666,0.0
+final_eval_20260321__r10,10,S3,structured_dialogue,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S3,no_speaker,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S3,continuous_transcript,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S4,structured_dialogue,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S4,no_speaker,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S4,continuous_transcript,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S5,structured_dialogue,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S5,no_speaker,full_transcript,1.0,1.0,1.0,1.0,0.0
+final_eval_20260321__r10,10,S5,continuous_transcript,full_transcript,1.0,1.0,1.0,1.0,0.0

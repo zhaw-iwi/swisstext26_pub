@@ -1,0 +1,134 @@
+{
+  "scenario_id": "S3",
+  "scenario_name": "Kellerbrand Schulhaus",
+  "metadata": {
+    "language": "de",
+    "domain": "firefighter_radio",
+    "synthetic": true
+  },
+  "messages": [
+    {
+      "id": 1,
+      "speaker": "Einsatzleitung",
+      "text": "An Alle von Einsatzleitung, Meldung: Kellerbrand Schulhaus Auen, Unterrichtstrakt geraeumt, Rauch aus Kellerfenstern West, Schluss"
+    },
+    {
+      "id": 2,
+      "speaker": "Einsatzleitung",
+      "text": "An Sicherungstrupp von Einsatzleitung, Befehl: Zugang Nord absichern und niemand vom Sammelplatz zurueck ins Gebaeude lassen, antworten"
+    },
+    {
+      "id": 3,
+      "speaker": "Sicherungstrupp",
+      "text": "Sicherungstrupp verstanden, Zugang Nord gesperrt halten und Ruecklauf vom Sammelplatz verhindern, Schluss"
+    },
+    {
+      "id": 4,
+      "speaker": "Einsatzleitung",
+      "text": "An Wassertrupp von Einsatzleitung, Befehl: Schlauchleitung von Hydrant Sued bis Kellertreppe legen, antworten"
+    },
+    {
+      "id": 5,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Leitung ueber Suedseite bis Kellertreppe steht im Aufbau, Schluss"
+    },
+    {
+      "id": 6,
+      "speaker": "Sicherungstrupp",
+      "text": "An Einsatzleitung von Sicherungstrupp, Meldung: Zugang Nord gesperrt, Lehrpersonen bleiben am Sammelplatz, Schluss"
+    },
+    {
+      "id": 7,
+      "speaker": "Einsatzleitung",
+      "text": "An Angriffstrupp von Einsatzleitung, Befehl: Brandraum Keller West erkunden, abloeschen und Installationsschacht kontrollieren, Zugang ueber Kellertreppe Sued, Waermebild mitnehmen, antworten"
+    },
+    {
+      "id": 8,
+      "speaker": "Angriffstrupp",
+      "text": "Angriffstrupp wiederholt, Keller West ueber Suedtreppe, Erkundung, Loeschangriff und Schachtkontrolle mit Waermebild, verstanden, Schluss"
+    },
+    {
+      "id": 9,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: Schlauchleitung steht bis Kellertreppe, Wasser marsch moeglich, Schluss"
+    },
+    {
+      "id": 10,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: verrauchte Waschkueche Keller West, Brand in einem Trockner, Tuer zum Nebenraum geschlossen gehalten, Loeschangriff beginnt, Schluss"
+    },
+    {
+      "id": 11,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: offenes Feuer am Trockner aus, Kontrolle im Installationsschacht laeuft noch, Schluss"
+    },
+    {
+      "id": 12,
+      "speaker": "Einsatzleitung",
+      "text": "An Wassertrupp von Einsatzleitung, Befehl: an der Kellertreppe in Reserve bleiben und Leitung unter Druck halten, antworten"
+    },
+    {
+      "id": 13,
+      "speaker": "Wassertrupp",
+      "text": "Wassertrupp verstanden, Reserve an der Kellertreppe, Leitung bleibt unter Druck"
+    },
+    {
+      "id": 14,
+      "speaker": "Wassertrupp",
+      "text": "An Einsatzleitung von Wassertrupp, Meldung: Leitung an Kellertreppe weiter unter Druck, Reserve am Treppenpodest bereit, Schluss"
+    },
+    {
+      "id": 15,
+      "speaker": "Angriffstrupp",
+      "text": "An Einsatzleitung von Angriffstrupp, Meldung: Brand am Trockner abgeloescht, keine Ausbreitung in den Installationsschacht, Brandraum Keller West unter Kontrolle, Schluss"
+    },
+    {
+      "id": 16,
+      "speaker": "Einsatzleitung",
+      "text": "An Alle von Einsatzleitung, Meldung: Keller West unter Kontrolle, Nachkontrolle laeuft weiter, Zugang Nord bleibt gesperrt, Wassertrupp noch in Bereitstellung, Schluss"
+    }
+  ],
+  "predefined_tasks": [
+    {
+      "task_id": "T1",
+      "task_name": "Zugang Nord absichern"
+    },
+    {
+      "task_id": "T2",
+      "task_name": "Schlauchleitung bis Kellertreppe legen"
+    },
+    {
+      "task_id": "T3",
+      "task_name": "Brandraum Keller West abloeschen und Installationsschacht kontrollieren"
+    }
+  ],
+  "gold_task_states": [
+    {
+      "task_id": "T1",
+      "assigned": true,
+      "assigned_unit": "Sicherungstrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Sicherungstrupp, Meldung: Zugang Nord gesperrt, Lehrpersonen bleiben am Sammelplatz, Schluss",
+      "assignment_message_id": 2,
+      "completion_message_id": 6
+    },
+    {
+      "task_id": "T2",
+      "assigned": true,
+      "assigned_unit": "Wassertrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Wassertrupp, Meldung: Schlauchleitung steht bis Kellertreppe, Wasser marsch moeglich, Schluss",
+      "assignment_message_id": 4,
+      "completion_message_id": 9
+    },
+    {
+      "task_id": "T3",
+      "assigned": true,
+      "assigned_unit": "Angriffstrupp",
+      "completed": true,
+      "completion_outcome": "An Einsatzleitung von Angriffstrupp, Meldung: Brand am Trockner abgeloescht, keine Ausbreitung in den Installationsschacht, Brandraum Keller West unter Kontrolle, Schluss",
+      "assignment_message_id": 7,
+      "completion_message_id": 15
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+You are acting as an independent structural validator for a synthetic firefighter radio dataset.
+
+Read these guidance files first:
+
+./.agents/datasetgeneration/dataset_validation_structure.md
+./.agents/datasetgeneration/source_notes_sprechregeln.md
+./.agents/datasetgeneration/source_notes_real_transcript.md
+
+Then inspect the generated scenario JSON files in the dataset folder.
+
+Your job is to evaluate the dataset ONLY for structural validity and communication realism, not for operational content validity.
+
+Validation focus:
+1. protocol adherence
+2. message structure plausibility
+3. turn-taking plausibility
+4. radio phrasing plausibility
+5. communication flow realism
+6. whether the dataset remains coherent under the intended transcript representations
+
+Instructions:
+1. Use the validation criteria from:
+   ./.agents/datasetgeneration/dataset_validation_structure.md
+2. Evaluate each scenario separately.
+3. Be strict and concrete.
+4. Identify both scenario-level issues and cross-dataset patterns.
+5. Distinguish clearly between:
+   a. critical issues
+   b. moderate issues
+   c. minor issues
+6. If something is good, say why.
+7. If something is unrealistic, quote the relevant message ids and explain the problem precisely.
+
+Deliverable:
+Create a markdown report named STRUCTURE_VALIDATION_REPORT.md in the dataset folder.
+
+The report must contain:
+1. per-scenario assessment
+2. dataset-level assessment
+3. explicit pass/fail judgment for each scenario
+4. explicit overall pass/fail judgment
+5. a concrete revision list that can be applied by another Codex run
+
+Do not modify the dataset in this step unless the repository already has a clearly established validation-fix workflow. This step is for independent assessment.

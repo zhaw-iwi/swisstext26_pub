@@ -1,0 +1,23 @@
+{
+  "run_id": "final_eval_20260321__r09",
+  "run_index": 9,
+  "run_dir": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09",
+  "num_work_items": 321,
+  "num_provider_calls": 321,
+  "table_outputs": {
+    "full_transcript_per_scenario_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\full_transcript_per_scenario.csv",
+    "full_transcript_summary_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\full_transcript_summary.csv",
+    "incremental_per_scenario_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\incremental_per_scenario.csv",
+    "incremental_summary_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\incremental_summary.csv",
+    "all_condition_rows_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\all_condition_rows.csv",
+    "combined_condition_summary_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\combined_condition_summary.csv",
+    "prefix_level_metrics_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\prefix_level_metrics.csv",
+    "terminal_convergence_per_scenario_csv": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\tables\\terminal_convergence_per_scenario.csv"
+  },
+  "figure_outputs": {
+    "figure_full_transcript": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\figures\\full_transcript_metrics_by_structure.png",
+    "figure_incremental": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\figures\\incremental_metrics_by_structure.png",
+    "figure_latency": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\figures\\incremental_latency_by_structure.png",
+    "figure_structure_processing_comparison": "C:\\Data\\VSCodeWorkSpace\\swisstext26\\code\\outputs\\final_eval_20260321__r09\\figures\\structure_processing_comparison.png"
+  }
+}

@@ -1,0 +1,5 @@
+An Alle von Einsatzleitung, Meldung: Tiefgaragenbrand Wohnblock Lindenhof, Zufahrt ueber Rampe West, starker Rauch aus Garagentor, Schluss
+An Einsatzleitung von Angriffstrupp, Meldung: vor Ort an Rampe West, Sicht schlecht, keine Personen sichtbar, Schluss
+An Sicherheitstrupp von Einsatzleitung, Befehl: Stromabschaltung Tiefgarage im Vorraum veranlassen und Garagentor auf Handbetrieb sichern, antworten
+Sicherheitstrupp verstanden, Stromabschaltung und Tor auf Handbetrieb werden veranlasst, Schluss
+An Wassertrupp von Einsatzleitung, Befehl: Schlauchleitung ab Vorraum bis Rampe West vorziehen, Wasser marsch fuer Angriffstrupp bereitstellen, antworten

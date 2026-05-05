@@ -1,0 +1,4 @@
+structure_condition,assignment_accuracy,unit_assignment_accuracy,completion_accuracy,current_state_accuracy,assignment_detection_latency,completion_detection_latency,assignment_detection_miss_rate,completion_detection_miss_rate
+continuous_transcript,0.9802840434419382,0.8697093111566796,0.9755952380952382,0.9558792815371764,0.26666666666666666,0.06666666666666667,0.0,0.0
+no_speaker,0.9799498746867167,0.8658663704716336,0.9787698412698413,0.958719715956558,0.2,0.0,0.0,0.0
+structured_dialogue,0.9837928153717627,0.866200539226855,0.9765873015873016,0.9603801169590642,0.26666666666666666,0.0,0.0,0.0

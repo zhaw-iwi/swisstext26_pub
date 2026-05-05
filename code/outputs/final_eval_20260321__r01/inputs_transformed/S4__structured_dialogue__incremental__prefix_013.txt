@@ -1,0 +1,13 @@
+Einsatzleitung: An Alle von Einsatzleitung, Meldung: Werkstattbrand Industriehof Ost, zwei Gasflaschen im hinteren Bereich gemeldet, Zufahrt eng, Schluss
+Angriffstrupp: An Einsatzleitung von Angriffstrupp, Meldung: vor Ort Westseite, Werkbankbrand im Innenraum sichtbar, zwei Gasflaschen hinten rechts hinter Regal erkennbar, Zugang ueber Westtuere moeglich, Schluss
+Einsatzleitung: An Verkehrstrupp von Einsatzleitung, Befehl: Zufahrt Ost sperren und Sicherheitsbereich fuenfzig Meter einrichten, antworten
+Verkehrstrupp: Verkehrstrupp verstanden, Zufahrt Ost und Sicherheitsbereich fuenfzig Meter, Schluss
+Einsatzleitung: An Wassertrupp von Einsatzleitung, Befehl: Wasserversorgung Westseite aufbauen und Deckung fuer Kuehlung hinter Mauer herstellen, antworten
+Wassertrupp: Wassertrupp verstanden, Wasserversorgung Westseite und Deckung hinter Mauer, Schluss
+Wassertrupp: An Einsatzleitung von Wassertrupp, Meldung: Wasserversorgung Westseite steht, Deckung hinter Mauer eingerichtet, Kuehlung aus Deckung moeglich, Schluss
+Einsatzleitung: An Wassertrupp von Einsatzleitung, Befehl: Gasflaschen im hinteren Bereich aus Deckung kuehlen, Abstand halten, antworten
+Wassertrupp: Wassertrupp verstanden, Kuehlung von aussen ueber Deckung, Abstand bleibt gross, Schluss
+Einsatzleitung: An Angriffstrupp von Einsatzleitung, Befehl: Werkbankbrand erst bei stehender Kuehlung von der Westtuere mit Schaum abloeschen, Gasflaschenlage laufend melden, antworten
+Angriffstrupp: Angriffstrupp verstanden, Schaumangriff ueber Westtuere erst bei stehender Kuehlung, Schluss
+Verkehrstrupp: An Einsatzleitung von Verkehrstrupp, Meldung: Zufahrt Ost gesperrt, Sicherheitsbereich steht, Personen aus Vorplatz draussen, Schluss
+Wassertrupp: An Einsatzleitung von Wassertrupp, Meldung: Kuehlung auf beide Gasflaschen steht, eine Flasche am Ventil noch deutlich warm, Deckung wirkt, Schluss

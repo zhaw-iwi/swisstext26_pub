@@ -1,0 +1,98 @@
+\section{Results}
+\label{sec:evaluation}
+
+The main empirical result is straightforward: in this controlled setup, simplifying transcript structure has little effect on aggregate task-state monitoring performance. Across all conditions, assignment, completion, and current-state accuracy remain high. The lowest aggregate metric is unit assignment, but this should be interpreted as a stricter prefix-level score rather than as frequent confusion between responsible units.
+
+\subsection{Incremental Accuracy}
+
+Incremental inference is the more deployment-relevant setting because the command-support system must update task state while communication unfolds. Table~\ref{tab:incremental-results} shows that performance remains strong and tightly clustered across transcript structures. The unit-assignment column is consistently lower than the other state-tracking metrics, but inspection of the persisted artifacts suggests that this does not primarily reflect wrong responsible-unit names. Most unit mismatches arise when an incremental prediction has not yet marked a gold-assigned task as assigned, especially for conditional or preparatory tasking, with a smaller number of premature assignments. Thus, the harder part is aligning assignment timing and unit grounding as evidence unfolds, rather than choosing among units once a task is accepted as assigned.
+
+In the offline \texttt{full\_transcript} reference, assignment and unit-assignment accuracy are 1.000 in all three transcript conditions. Completion and final-state accuracy are 0.933 in all conditions.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Structure & Assign. & Unit & Complete & Current \\
+\midrule
+Structured dialogue & 0.981 $\pm$ 0.006 & 0.864 $\pm$ 0.016 & 0.977 $\pm$ 0.008 & 0.958 $\pm$ 0.011 \\
+No speaker & 0.980 $\pm$ 0.007 & 0.865 $\pm$ 0.016 & 0.978 $\pm$ 0.007 & 0.958 $\pm$ 0.009 \\
+Continuous transcript & 0.981 $\pm$ 0.007 & 0.868 $\pm$ 0.014 & 0.978 $\pm$ 0.007 & 0.959 $\pm$ 0.010 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Incremental monitoring accuracy by transcript structure.}
+\label{tab:incremental-results}
+\end{table}
+
+\subsection{Incremental Latency and Misses}
+
+Latency is the second key deployment-oriented result because the dashboard benefits not only from eventually correct updates but from updates that arrive close to the true transition point. We therefore report two complementary quantities in Table~\ref{tab:incremental-latency-results}: conditional latency in prefix steps for events that were correctly detected, and miss rate for gold transitions never correctly detected before the scenario ended. Assignment latency therefore requires the model to mark a task as assigned with the correct unit, while completion latency requires the model to mark the task as completed while preserving coherent assigned state and the correct unit.
+
+The latency results are straightforward. Across all three transcript conditions, correct assignment updates remain well below one prefix step on average and no assignment misses occur. Completion detection is even stronger, with effectively immediate updates and zero completion misses throughout. In practical terms, once the transcript supports a state change, the model usually updates at once or with only a very small delay.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Structure & Assign. lat. & Assign. miss & Comp. lat. & Comp. miss \\
+\midrule
+Structured dialogue & 0.256 $\pm$ 0.127 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 \\
+No speaker & 0.256 $\pm$ 0.126 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 \\
+Continuous transcript & 0.278 $\pm$ 0.133 & 0.000 $\pm$ 0.000 & 0.006 $\pm$ 0.011 & 0.000 $\pm$ 0.000 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Incremental correct-detection latency and miss rate by transcript structure.}
+\label{tab:incremental-latency-results}
+\end{table}
+
+\subsection{Terminal Convergence}
+
+Table~\ref{tab:terminal-convergence-results} reports absolute terminal gaps between the last incremental prefix metrics and the corresponding full-transcript reference for the same run, scenario, and transcript structure.
+
+The convergence pattern is very tight. By the end of the scenario, the incremental setup almost exactly recovers the performance profile of the offline \texttt{full\_transcript} reference. This makes the reference useful as a sanity check for interpreting the incremental results.
+
+\begin{table}[t]
+\centering
+\small
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Structure & Assign. gap & Unit gap & Comp. gap & State gap \\
+\midrule
+Structured dialogue & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 0.006 $\pm$ 0.011 & 0.006 $\pm$ 0.011 \\
+No speaker & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 0.006 $\pm$ 0.011 & 0.006 $\pm$ 0.011 \\
+Continuous transcript & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 & 0.000 $\pm$ 0.000 \\
+\bottomrule
+\end{tabular}
+}
+\caption{Terminal convergence of the last incremental prefix to the offline full-transcript reference.}
+\label{tab:terminal-convergence-results}
+\end{table}
+
+\subsection{Completion-Outcome Reanalysis}
+
+The original exact-match \texttt{completion\_outcome} metric remains 0.000 in all three transcript conditions and is therefore not useful on its own. Inspection of the outputs, however, suggests that this mostly reflects paraphrastic variation: the model often paraphrases the completion evidence instead of reproducing the gold completion string verbatim. We therefore ran a retrospective similarity-based comparison on the already collected outputs for gold-completed tasks only.
+
+Table~\ref{tab:completion-outcome-reanalysis} reports ROUGE-L F1 for this reanalysis. The resulting scores are clearly above zero but remain broadly similar across transcript conditions. This makes the \texttt{completion\_outcome} field somewhat more informative than exact match suggested, while leaving the main conclusion unchanged: transcript structure still has only small effects in this bounded monitoring setup. At the same time, the scores remain well below the stronger assignment and completion-state results, so we interpret them conservatively as evidence of partial string-level overlap rather than robust semantic understanding.
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lc}
+\toprule
+Structure & ROUGE-L F1 \\
+\midrule
+Structured dialogue & 0.625 $\pm$ 0.007 \\
+No speaker & 0.657 $\pm$ 0.015 \\
+Continuous transcript & 0.638 $\pm$ 0.017 \\
+\bottomrule
+\end{tabular}
+\caption{Retrospective \texttt{completion\_outcome} reanalysis on gold-completed tasks only.}
+\label{tab:completion-outcome-reanalysis}
+\end{table}

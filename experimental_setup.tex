@@ -1,0 +1,42 @@
+\section{Experimental Setup}
+\label{sec:experimental-setup}
+
+We evaluate the dataset under a $3 \times 2$ design that varies transcript structure and processing mode while keeping the underlying scenario content fixed.
+
+\subsection{Conditions}
+
+We compare three transcript structures: \textbf{structured\_dialogue}, which includes speaker identities and utterance boundaries, \textbf{no\_speaker}, which retains utterance boundaries but omits speakers, and \textbf{continuous\_transcript}, which contains neither speakers nor boundaries. This last condition approximates the minimum structure available when speakers cannot be identified and reliable utterance segmentation is not available.
+
+We evaluate two processing modes: \textbf{incremental}, which predicts on each growing message prefix from the first message to the full transcript, and \textbf{full\_transcript}, which predicts once on the complete transcript.
+
+Incremental processing is the primary application condition. The \texttt{full\_transcript} condition serves as a secondary offline reference once all evidence is available. For incremental \texttt{continuous\_transcript} mode, each prefix is rendered as one continuous text string without speaker labels or message boundaries.
+
+\subsection{Execution and Reproducibility}
+
+All reported values are batch-level means across 12 repeated runs. The notebook runs the evaluation in live mode with \texttt{gpt-5.2} at temperature 0.0. Repeated runs are reported because live API inference can still show small residual variation despite deterministic settings. The evaluation prompt instructed the model to behave conservatively: when the transcript did not provide sufficient evidence for assignment or completion, the corresponding fields were to remain \texttt{false}/\texttt{null}. This reflects the operational preference to avoid overstating task progress under incomplete evidence. The evaluation pipeline persists each request and response artifact using deterministic identifiers over run, scenario, structure condition, processing mode, and prefix index, supporting resume-safe execution and auditability. The repository contains the dataset-generation prompts, validation prompts, source notes, evaluation prompt payloads, and persisted request/response artifacts. The tables report 95\% confidence intervals from the batch summaries exported by the notebook and evaluation code.
+
+\subsection{Metrics}
+
+We report four state-monitoring metrics in both processing modes. In the incremental setting, each metric is computed at every evaluated prefix and then averaged over prefixes. In the \texttt{full\_transcript} setting, the same metric is computed once on the final scenario transcript.
+
+\textbf{Assignment accuracy.} This metric measures, for each predefined task, whether the predicted \texttt{assigned} value matches gold.
+
+\textbf{Unit assignment accuracy.} This metric measures whether the predicted \texttt{assigned\_unit} matches gold. It is evaluated on tasks for which either gold or prediction marks the task as assigned, so that unit assignment is scored only where a responsible unit is relevant. In the incremental setting, scores are first computed per prefix and then averaged. Prefixes without any unit-assignment support contribute 0.0 by construction.
+
+\textbf{Completion accuracy.} This metric measures, for each predefined task, whether the predicted \texttt{completed} value matches gold.
+
+\textbf{State accuracy.} This metric collapses each task state to one of \texttt{NOT\_ASSIGNED}, \texttt{ASSIGNED}, or \texttt{COMPLETED}, and then measures whether the predicted three-way state matches gold.
+
+For incremental evaluation, we additionally report assignment and completion detection latency together with assignment and completion miss rate. The gold transition points come from explicit scenario annotations for first assignment and, when applicable, first completion evidence. Assignment is anchored to the first operative command that hands responsibility for the predefined task to the assigned unit. Later refinements to the same unit do not reset the assignment point.
+
+\textbf{Assignment detection latency.} This metric measures the number of prefix steps between the gold assignment point and the first prefix at which the model predicts the task as assigned with the correct unit. It is reported only for successfully detected assignment events.
+
+\textbf{Completion detection latency.} This metric measures the number of prefix steps between the gold completion point and the first prefix at which the model predicts the task as completed while preserving assigned state and the correct unit. It is reported only for successfully detected completion events.
+
+\textbf{Assignment detection miss rate.} This metric is the proportion of gold assignment events that are never correctly detected before the scenario ends.
+
+\textbf{Completion detection miss rate.} This metric is the proportion of gold completion events that are never correctly detected before the scenario ends.
+
+\textbf{Terminal gaps.} As a reference comparison, we report terminal assignment, unit-assignment, completion, and state gaps. These are the absolute differences between the last incremental-prefix metrics and the corresponding \texttt{full\_transcript} metrics for the same run, scenario, and transcript structure.
+
+\textbf{Completion outcome.} For \texttt{completion\_outcome}, exact match proved too strict because the model often paraphrases the completion evidence rather than reproducing the gold message string verbatim. We therefore report a retrospective similarity-based reanalysis on gold-completed tasks using ROUGE-L F1 as a secondary reference metric.

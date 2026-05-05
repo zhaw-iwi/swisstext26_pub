@@ -1,0 +1,74 @@
+\documentclass[11pt]{article}
+
+% Change "review" to "final" to generate the final (sometimes called camera-ready) version.
+% Change to "preprint" to generate a non-anonymous version with page numbers.
+\usepackage[final]{acl}
+
+% Standard package includes
+\usepackage{times}
+\usepackage{latexsym}
+
+% For proper rendering and hyphenation of words containing Latin characters (including in bib files)
+\usepackage[T1]{fontenc}
+% For Vietnamese characters
+% \usepackage[T5]{fontenc}
+% See https://www.latex-project.org/help/documentation/encguide.pdf for other character sets
+
+% This assumes your files are encoded as UTF8
+\usepackage[utf8]{inputenc}
+
+% This is not strictly necessary, and may be commented out,
+% but it will improve the layout of the manuscript,
+% and will typically save some space.
+\usepackage{microtype}
+
+% This is also not strictly necessary, and may be commented out.
+% However, it will improve the aesthetics of text in
+% the typewriter font.
+\usepackage{inconsolata}
+
+%Including images in your LaTeX document requires adding
+%additional package(s)
+\usepackage{graphicx}
+\usepackage{booktabs}
+
+% If the title and author information does not fit in the area allocated, uncomment the following
+%
+%\setlength\titlebox{<dim>}
+%
+% and set <dim> to something 5cm or larger.
+
+\title{A Bounded Coordination-Support Capability for Multi-Party Settings: Task-State Monitoring in Firefighter Incident Command}
+
+% Author information
+\author{David Grünert \and Barbara Morgenstern \and Florian Peczinka \\
+\textbf{\and Dario Holenstein \and Roland Brunner \and Alexandre de Spindler} \\
+Zurich University of Applied Sciences, Winterthur, Switzerland \\
+\texttt{\{grud,desa\}@zhaw.ch},\texttt{\{morgebar,pecziflo,holendar\}@students.zhaw.ch} \\
+Freiwillige Feuerwehr Stadt Zug, Zug, Switzerland \\
+\texttt{roland.brunner@stadtzug.ch}}
+
+
+\begin{document}
+\maketitle
+\begin{abstract}
+  Many collaboration settings require digital support systems for several humans who coordinate through ongoing communication. We study one such application in firefighter incident command: a dashboard that monitors, from radio transcripts, the state of predefined tasks derived from standard operating procedures (SOPs) and related procedures.
+  Building such a dashboard raises a practical design question: how much transcript structure is actually needed for LLM-based task-state monitoring? More specifically, we examine whether additional transcript structure materially improves monitoring performance, even though it is difficult to obtain reliably from radio communication and increases complexity and latency.
+  We evaluate this question on source-grounded synthetic firefighter scenarios under transcript conditions that vary speaker identity and utterance boundaries, with incremental inference as the deployment-facing condition and full-transcript inference as an offline reference.
+  Across repeated runs, incremental monitoring remains strong across all transcript conditions. Differences between transcript structures are small, continuous transcripts remain competitive, and the main weaknesses are unit-related assignment timing and capturing the completion result, which remain broadly similar across conditions.
+  These results suggest that for this bounded dashboard-support capability, neither speaker identities nor semantically precise utterance boundaries are a primary requirement in the controlled setting studied here.
+\end{abstract}
+
+\input{introduction}
+\input{background}
+\input{application}
+\input{dataset}
+\input{experimental_setup}
+\input{evaluation}
+\input{conclusion}
+\clearpage
+
+% Custom bibliography entries only
+\bibliography{bibliography}
+
+\end{document}

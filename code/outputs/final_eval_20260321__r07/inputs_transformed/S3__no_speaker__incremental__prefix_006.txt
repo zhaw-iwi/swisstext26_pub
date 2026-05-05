@@ -1,0 +1,6 @@
+An Alle von Einsatzleitung, Meldung: Kellerbrand Schulhaus Auen, Unterrichtstrakt geraeumt, Rauch aus Kellerfenstern West, Schluss
+An Sicherungstrupp von Einsatzleitung, Befehl: Zugang Nord absichern und niemand vom Sammelplatz zurueck ins Gebaeude lassen, antworten
+Sicherungstrupp verstanden, Zugang Nord gesperrt halten und Ruecklauf vom Sammelplatz verhindern, Schluss
+An Wassertrupp von Einsatzleitung, Befehl: Schlauchleitung von Hydrant Sued bis Kellertreppe legen, antworten
+Wassertrupp verstanden, Leitung ueber Suedseite bis Kellertreppe steht im Aufbau, Schluss
+An Einsatzleitung von Sicherungstrupp, Meldung: Zugang Nord gesperrt, Lehrpersonen bleiben am Sammelplatz, Schluss

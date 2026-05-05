@@ -1,0 +1,25 @@
+{
+  "task_states": [
+    {
+      "task_id": "T1",
+      "assigned": true,
+      "assigned_unit": "Sicherheitstrupp",
+      "completed": true,
+      "completion_outcome": "Tiefgarage stromlos, Garagentor auf Handbetrieb gesichert"
+    },
+    {
+      "task_id": "T2",
+      "assigned": true,
+      "assigned_unit": "Angriffstrupp",
+      "completed": true,
+      "completion_outcome": "Brandherd (PKW B12) lokalisiert; offenes Feuer aus; Nachlöscharbeiten abgeschlossen, keine offenen Glutnester sichtbar"
+    },
+    {
+      "task_id": "T3",
+      "assigned": true,
+      "assigned_unit": "Messgruppe",
+      "completed": true,
+      "completion_outcome": "Erste CO-Messung durchgeführt: Vorraum 60 ppm CO; Rampe noch deutlich verraucht; Tiefgarage nicht frei"
+    }
+  ]
+}
